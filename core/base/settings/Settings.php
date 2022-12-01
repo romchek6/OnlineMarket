@@ -8,8 +8,8 @@ class Settings
 
     private $routes = [
         'admin' => [
-            'name'=>'admin',
-            'path'=> 'core/admin/controller/',
+            'alias'=>'admin',
+            'path'=> 'core/admin/controllers/',
             'hrUrl'=> false
         ],
         'settings' => [
@@ -20,7 +20,7 @@ class Settings
             'hrUrl'=> false
         ],
         'user'=>[
-            'path'=>'core/user/controller/',
+            'path'=>'core/user/controllers/',
             'hrUrl'=> true,
             'routes'=>[
 
@@ -56,7 +56,9 @@ class Settings
     }
 
     public function clueProperties($class){
+
         $baseProperties = [];
+
         foreach ($this as $name => $item){
 
             $property = $class::get($name);
@@ -64,11 +66,14 @@ class Settings
             if(is_array($property) && is_array($item)){
 
                $baseProperties[$name] =  $this ->arrayMergeRecursive($this->$name,$property);
-
+               continue;
             }
+
+            if(!$property) $baseProperties[$name] = $this->$name;
         }
 
-        exit();
+        return $baseProperties;
+
     }
 
     public function arrayMergeRecursive(){
@@ -80,14 +85,14 @@ class Settings
         foreach ($arrays as $array){
             foreach ($array as $key => $value){
                 if(is_array($value) && is_array($base[$key])){
-                    $base[$key] = $this->arrayMergeRecursive($base['key'],$value);
+                    $base[$key] = $this->arrayMergeRecursive($base[$key],$value);
+
                 }else{
                     if(is_int($key)){
-                        print_r($base);
-                        if (!in_array($value,$base)) array_push($base, $value);
+                        if (!in_array($value, $base)) $base[] = $value;
                         continue;
                     }
-                    $base['key'] = $value;
+                    $base[$key] = $value;
                 }
             }
         }
