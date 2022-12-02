@@ -6,17 +6,12 @@ use core\base\exceptions\RouteException;
 use core\base\settings\Settings ;
 use core\base\settings\ShopSettings;
 
-class RouteController
+class RouteController extends BaseController
 {
 
     static private $_instance;
 
     protected $routes;
-
-    protected $controller;
-    protected $inputMethod;
-    protected $outputMethod;
-    protected $parameters;
 
     private function __clone()
     {
@@ -46,7 +41,11 @@ class RouteController
 
             if(!$this->routes) throw new RouteException('Сайт находится на тех обслуживании');
 
-            if(strpos($adress_str, $this ->routes['admin']['alias']) ===strlen(PATH)){
+            $url = explode('/',substr($adress_str, strlen(PATH)));
+
+            if($url[0] && $url[0]===$this -> routes['admin']['alias']){
+
+                array_shift($url);
 
                 $url = explode('/',substr($adress_str, strlen(PATH .$this -> routes['admin']['alias']) +1));
 
@@ -88,7 +87,6 @@ class RouteController
 
 
             }else{
-                $url = explode('/',substr($adress_str, strlen(PATH)));
 
                 $hrUrl = $this->routes['user']['hrUrl'];
 
@@ -112,10 +110,10 @@ class RouteController
                     $i =2;
                 }
 
-                for(;$i<$count;$i++){
+                for(; $i < $count; $i++){
                     if(!$key){
                         $key = $url[$i];
-                        $this->parameters[$key] ='';
+                        $this->parameters[$key] = '';
                     }else{
                         $this->parameters[$key] = $url[$i];
                         $key = '';
@@ -123,8 +121,6 @@ class RouteController
                 }
 
             }
-
-            exit();
 
         }else{
             try{
@@ -153,9 +149,13 @@ class RouteController
         }
 
         $this->inputMethod = $route[1]? $route[1]:$this ->routes['default']['inputMethod'];
-        $this->inputMethod = $route[2]? $route[2]:$this ->routes['default']['outputMethod'];
+        $this->outputMethod = $route[2]? $route[2]:$this ->routes['default']['outputMethod'];
 
         return;
+
+
     }
+
+
 
 }

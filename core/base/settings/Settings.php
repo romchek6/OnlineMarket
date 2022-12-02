@@ -10,7 +10,10 @@ class Settings
         'admin' => [
             'alias'=>'admin',
             'path'=> 'core/admin/controllers/',
-            'hrUrl'=> false
+            'hrUrl'=> false,
+            'routes'=>[
+                'product'=>'goods'
+            ]
         ],
         'settings' => [
             'path'=>'core/base/settings/'
