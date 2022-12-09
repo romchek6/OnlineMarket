@@ -2,7 +2,6 @@
 
 namespace core\base\models;
 
-use core\admin\models\BaseModelMethods;
 use core\base\controllers\Singleton;
 use core\base\exceptions\DbException;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace core\admin\models;
+namespace core\base\models;
 
 abstract  class BaseModelMethods
 {

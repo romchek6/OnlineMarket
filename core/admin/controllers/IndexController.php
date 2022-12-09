@@ -14,6 +14,12 @@ class IndexController extends BaseController
 
         $table = 'articles';
 
+        $db->add($table, [
+            'fields' =>['name'=>'dsadsadas','content'=>'ewqewqesad','price'=>7444]
+        ]);
+
+        exit();
+
     }
 
 }
