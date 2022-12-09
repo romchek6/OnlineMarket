@@ -158,23 +158,31 @@ class BaseModel extends BaseModelMethods
      * @return mixed
      */
 
-    final public function add($table , $set){
+    final public function add($table, $set)
+    {
 
-        $set['fields'] = is_array($set['fields']) && !empty($set['fields'])? $set['fields'] : false;
-        $set['files'] = is_array($set['files']) && !empty($set['files'])? $set['files'] : false;
+        $set['fields'] = is_array($set['fields']) && !empty($set['fields']) ? $set['fields'] : $_POST;
+        $set['files'] = is_array($set['files']) && !empty($set['files']) ? $set['files'] : false;
+
+        if (!$set['fields'] && $set['files']) return false;
+
         $set['return_id'] = $set['return_id'] ? true : false;
-        $set['except'] = is_array($set['except']) && !empty($set['except'])? $set['except'] : false;
+        $set['except'] = is_array($set['except']) && !empty($set['except']) ? $set['except'] : false;
 
-        $insert_arr = $this->createInsert($set['fields'],$set['files'],$set['except']);
+        $insert_arr = $this->createInsert($set['fields'], $set['files'], $set['except']);
 
-        if($insert_arr){
+        if ($insert_arr) {
             $query = "INSERT INTO $table ({$insert_arr['fields']}) VALUES ({$insert_arr['values']})";
 
-            return $this->query($query, 'c',$set['return_id']);
+            return $this->query($query, 'c', $set['return_id']);
         }
 
         return false;
 
     }
 
+    final public function update()
+    {
+
+    }
 }

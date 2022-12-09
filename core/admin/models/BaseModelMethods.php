@@ -221,10 +221,6 @@ abstract  class BaseModelMethods
 
     protected function createInsert($fields,$files,$except){
 
-        if(!$fields){
-            $fields = $_POST;
-        }
-
         $insert_arr =[];
 
         if($fields){
@@ -252,8 +248,20 @@ abstract  class BaseModelMethods
 
 
 
+
+                $insert_arr['fields'] .= $row . ",";
+
+                if(is_array($file))  $insert_arr['values'] .= "'" . json_encode($file) . "',";
+                    else $insert_arr['values'] .= "'" . addslashes($file) . "',";
+
             }
 
         }
+
+        $insert_arr['fields'] = rtrim($insert_arr['fields'],",");
+        $insert_arr['values'] = rtrim($insert_arr['values'],",");
+
+        return $insert_arr;
+
     }
 }
