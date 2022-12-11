@@ -46,6 +46,8 @@ class Settings
         'textarea' =>['content','keywords']
     ];
 
+    private $defaultTable = 'articles';
+
 
     static public function get($property){
         return self::instance()->$property;
