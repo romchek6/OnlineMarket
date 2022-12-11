@@ -28,7 +28,7 @@ class BaseModel extends BaseModelMethods
 
     /**
      * @param $query
-     * @param $crud = r - SELECT / c - INSERT / u - update / d - delete
+     * @param $crud = r - SELECT / c - INSERT / u - UPDATE / d - DELETE
      * @param $return_id
      * @return array|bool
      * @throws DbException
@@ -62,20 +62,19 @@ class BaseModel extends BaseModelMethods
 
                 return false;
 
-                break;
+
             case 'c':
 
                 if ($return_id) return $this->db->insert_id;
 
                 return true;
 
-                break;
 
             default:
 
                 return true;
 
-                break;
+
         }
 
     }
@@ -117,6 +116,7 @@ class BaseModel extends BaseModelMethods
      * ]
      */
 
+//  запрос данных из бд
 
     final public function get($table, $set = [])
     {
@@ -157,13 +157,15 @@ class BaseModel extends BaseModelMethods
      * @return mixed
      */
 
-    final public function add($table, $set)
+//    Добавление данных в бд
+
+    final public function add($table, $set = [])
     {
 
         $set['fields'] = is_array($set['fields']) && !empty($set['fields']) ? $set['fields'] : $_POST;
         $set['files'] = is_array($set['files']) && !empty($set['files']) ? $set['files'] : false;
 
-        if (!$set['fields'] && $set['files']) return false;
+        if (!$set['fields'] && !$set['files']) return false;
 
         $set['return_id'] = $set['return_id'] ? true : false;
         $set['except'] = is_array($set['except']) && !empty($set['except']) ? $set['except'] : false;
@@ -180,8 +182,141 @@ class BaseModel extends BaseModelMethods
 
     }
 
-    final public function update()
+// изменения записи в бд
+
+    final public function edit($table, $set = [])
     {
+        $set['fields'] = is_array($set['fields']) && !empty($set['fields']) ? $set['fields'] : $_POST;
+        $set['files'] = is_array($set['files']) && !empty($set['files']) ? $set['files'] : false;
+
+        if (!$set['fields'] && !$set['files']) return false;
+
+        $set['except'] = is_array($set['except']) && !empty($set['except']) ? $set['except'] : false;
+
+        if(!$set['all_rows']){
+
+            if($set['where']){
+                $where = $this->createWhere($set);
+            }else{
+
+                $columns = $this->showColumns($table);
+
+                if(!$columns) return false;
+
+                if($columns['id_row'] && $set['fields'][$columns['id_row']]){
+                    $where = 'WHERE ' . $columns['id_row'] . '=' . $set['fields'][$columns['id_row']];
+                    unset($set['fields'][$columns['id_row']]);
+                }
+
+            }
+
+        }
+
+        $update = $this->createUpdate($set['fields'],$set['files'],$set['except']);
+
+        $query = "UPDATE $table SET $update $where";
+
+        return $this->query($query ,'u');
 
     }
+
+    /**
+     * @param $table - Таблица бд
+     * @param array $set
+     * [
+     * 'fields' =>['id','name',],
+     * 'where' =>['name'=>"O'Raily"],
+     * 'operand'=>['IN','<>'],
+     * 'condition'=>['AND','OR','AND'],
+     * 'order'=>['name'],
+     * 'order_direction'=>['DESC'],
+     * 'limit'=>'1',
+     * 'join'=>[
+     * 'join_table1'=>[
+     * 'table'=>'join_table1',
+     * 'fields'=> ['id as j_id', 'name as j_name'],
+     * 'type' => 'left',
+     * 'where' =>['name'=>'Roma'],
+     * 'operand' => ['='],
+     * 'condition' =>['OR'],
+     * 'on'=>[
+     * 'table'=> 'teachers',
+     * 'fields'=>['id', 'parent_id']
+     * ]
+     * ],
+     * 'join_table2'=>[
+     * 'table'=>'join_table2',
+     * 'fields'=> ['id as j2_id', 'name as j2_name'],
+     * 'type' => 'left',
+     * 'where' =>['name'=>'Roma'],
+     * 'operand' => ['='],
+     * 'condition' =>['OR'],
+     * 'on'=>['id','parent_id']
+     * ]
+     * ]
+     * ]
+     */
+
+//    удаление записи из бд
+
+    public function delete($table, $set){
+
+        $table = trim($table);
+
+        $where = $this->createWhere($set, $table);
+
+        $columns = $this->showColumns($table);
+        if(!$columns) return false;
+
+        if(is_array($set['fields']) && !empty($set['fields'])){
+
+            if($columns['id_row']){
+                $key = array_search($columns['id_row'],$set['fields']);
+                if($key !== false) unset($set['fields'][$key]);
+            }
+
+            $fields =[];
+
+            foreach ($set['fields'] as $field){
+                $fields[$field] = $columns[$field]['Default'];
+            }
+
+            $update = $this->createUpdate($fields, false ,false);
+
+            $query = "UPDATE $table SET $update $where";
+
+        }else{
+
+            $join_arr = $this->createJoin($set, $table);
+            $join = $join_arr['join'];
+            $join_tables = $join_arr['tables'];
+
+            $query = 'DELETE ' . $table . $join_tables . ' FROM ' . $table . ' ' . $join . ' ' . $where;
+
+        }
+
+        return $this->query($query,'d');
+
+    }
+
+//  Запрос данных о колонках бд
+
+    final public function showColumns($table){
+
+        $query ="SHOW COLUMNS FROM $table";
+        $res = $this->query($query);
+
+        $columns = [];
+
+        if($res){
+            foreach ($res as $row){
+                $columns[$row['Field']] = $row;
+                if($row['Key']==='PRI') $columns['id_row'] = $row['Field'];
+            }
+        }
+
+        return $columns;
+
+    }
+
 }

@@ -14,8 +14,14 @@ class IndexController extends BaseController
 
         $table = 'articles';
 
-        $db->add($table, [
-            'fields' =>['name'=>'dsadsadas','content'=>'ewqewqesad','price'=>7444]
+        $res = $db->delete($table,[
+           'where'=> ['id'=> 24],
+            'join'=>[
+                'students'=>[
+                    'table'=>'students',
+                    'on'=>['student_id','id']
+                ]
+            ]
         ]);
 
         exit();
