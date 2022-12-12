@@ -45,6 +45,7 @@ class BaseModel extends BaseModelMethods
             );
         }
 
+
         switch ($crud) {
             case 'r':
 
