@@ -16,6 +16,8 @@ abstract class BaseAdmin extends BaseController
     protected $columns;
     protected $data;
 
+    protected $adminPath;
+
     protected $menu;
     protected $title;
 
@@ -27,12 +29,18 @@ abstract class BaseAdmin extends BaseController
 
         if(!$this->model) $this->model = Model::instance();
         if(!$this->menu) $this->menu = Settings::get('projectTables');
+        if(!$this->adminPath) $this->adminPath = Settings::get('routes')['admin']['alias'] . '/';
 
         $this->sendNoCacheHeaders();
 
     }
 
     protected function outputData(){
+
+        $this->header = $this->render(ADMIN_TEMPLATE . 'include/header');
+        $this->footer = $this->render(ADMIN_TEMPLATE. 'include/footer');
+
+        return $this->render(ADMIN_TEMPLATE . 'layout/default');
 
     }
 
@@ -63,84 +71,47 @@ abstract class BaseAdmin extends BaseController
 
     }
 
-    protected function createDate($arr = [],$add = true){
+    protected function expansion($args =[] ,$settings = false){
 
-        $fields = [];
-        $order = [];
-        $order_direction = [];
+        $filename = explode('_', $this->table);
+        $className = '';
 
-        if($add){
+        foreach ($filename as $item) $className .= ucfirst($item);
 
-            if(!$this->columns['id_row']) return $this->data = [];
+        if(!$settings){
+            $path = Settings::get('expansion');
+        }elseif(is_object($settings)){
+            $path = $settings::get('expansion');
+        }else{
+            $path = $settings;
+        }
 
-            $fields[] = $this->columns['id_row'] . ' as id';
-            if($this->columns['name']) $fields['name'] = 'name';
-            if($this->columns['img']) $fields['img'] = 'img';
+        $class = $path . $className . 'Expansion';
 
-            if(count($fields) < 3){
-                foreach ($this->columns as $key =>$item){
-                    if(!$fields['name'] && strpos($key, 'name') !== false){
-                        $fields['name'] =  $key .  ' as name';
-                    }
-                    if(!$fields['img'] && strpos($key, 'img') === 0){
-                        $fields['img'] =  $key .  ' as img';
-                    }
-                }
+
+        if(is_readable($_SERVER['DOCUMENT_ROOT'] . PATH . $class . '.php')){
+
+            $class = str_replace('/' , '\\' , $class);
+
+            $exp = $class::instance();
+
+            foreach ($this as $name =>$value){
+                $exp->$name = &$this->$name;
             }
 
-            if($arr['fields']){
-                if(is_array($arr['fields'])){
-                    $fields = Settings::instance()->arrayMergeRecursive($fields,$arr['fields']);
-                }else{
-                    $fields[] = $arr['fields'];
-                }
-            }
+            return $exp->expansion($args);
 
-            if($this->columns['parent_id']){
-                if(!in_array('parent_id',$fields)) $fields[] = 'parent_id';
-                $order[] = 'parent_id';
-            }
-
-            if($this->columns['menu_position']) $order[] = 'menu_position';
-                elseif($this->columns['date']){
-                    if($order) $order_direction = ['ASC','DESC'];
-                        else $order_direction[] = 'DESC';
-
-                    $order[] = 'date';
-                }
-
-            if($arr['order']){
-                if(is_array($arr['order'])){
-                    $order = Settings::instance()->arrayMergeRecursive($order, $arr['order']);
-                }else{
-                    $order[] = $arr['order'];
-                }
-            }
-            if($arr['order_direction']){
-                if(is_array($arr['order_direction'])){
-                    $order_direction = Settings::instance()->arrayMergeRecursive($order_direction, $arr['order_direction']);
-                }else{
-                    $order[] = $arr['order_direction'];
-                }
-            }
         }else{
 
-            if(!$arr) return $this->data =[];
+            $file = $_SERVER['DOCUMENT_ROOT'] . PATH . $path . $this->table . '.php';
 
-            $fields = $arr['fields'];
-            $order = $arr['order'];
-            $order_direction = $arr['order_direction'];
+            extract($args);
 
+            if(is_readable($file)) return include $file;
 
         }
 
-        $this->data = $this->model->get($this->table,[
-            'fields' =>$fields,
-            'order' =>$order,
-            'order_direction'=>$order_direction
-        ]);
-
-        exit();
+        return false;
 
     }
 
