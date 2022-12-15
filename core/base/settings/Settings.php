@@ -43,7 +43,7 @@ class Settings
 
     private $expansion = 'core/admin/expansion/';
 
-    private $defaultTable = 'articles';
+    private $defaultTable = 'students';
 
     private $projectTables = [
         'articles'=>['name'=>'Учителя','img'=>'pages.png'],
@@ -53,6 +53,16 @@ class Settings
     private $templateArr = [
         'text' =>['name','phone', 'adress'],
         'textarea' =>['content','keywords']
+    ];
+
+    private $translate = [
+        'name'=>['Название', 'Не более 100 символов']
+    ];
+
+    private $blockNeedle = [
+        'vg-rows'=>[],
+        'vg-img'=>[],
+        'vg-content'=>[]
     ];
 
     static public function get($property){
