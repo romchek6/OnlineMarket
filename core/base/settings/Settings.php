@@ -45,9 +45,13 @@ class Settings
 
     private $defaultTable = 'students';
 
+    private $formTemplates = PATH . 'core/admin/view/include/form_templates/';
+
     private $projectTables = [
-        'articles'=>['name'=>'Учителя','img'=>'pages.png'],
-        'students'=>['name'=>'Ученики']
+        'articles'=>[],
+        'students'=>['name'=>'Ученики'],
+        'teacher' =>['name'=>'Учителя','img'=>'pages.png']
+
     ];
 
     private $templateArr = [

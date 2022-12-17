@@ -7,6 +7,8 @@ use core\base\settings\Settings;
 class AddController extends BaseAdmin
 {
 
+    protected $action = 'add';
+
     protected function inputData()
     {
 
@@ -23,6 +25,8 @@ class AddController extends BaseAdmin
         $this->createOutputData();
 
     }
+
+
 
     protected function createForeignProperty($arr , $rootItems){
 
