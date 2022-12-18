@@ -2,7 +2,7 @@
     <div class="vg-wrap vg-element vg-full vg-box-shadow">
         <div class="vg-wrap vg-element vg-full">
             <div class="vg-element vg-full vg-left">
-                <span class="vg-header">Название</span>
+                <span class="vg-header">Названиеewq</span>
             </div>
             <div class="vg-element vg-full vg-left">
                 <span class="vg-text vg-firm-color5"></span><span class="vg_subheader">Не более 100 символов</span>

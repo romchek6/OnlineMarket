@@ -27,6 +27,7 @@ abstract class BaseAdmin extends BaseController
 
     protected $templateArr;
     protected $formTemplates;
+    protected $noDelete;
 
 
     protected function inputData(){

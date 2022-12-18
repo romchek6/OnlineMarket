@@ -45,18 +45,23 @@ class Settings
 
     private $defaultTable = 'students';
 
-    private $formTemplates = PATH . 'core/admin/view/include/form_templates/';
+    private $formTemplates = PATH . 'core/admin/views/include/form_templates/';
 
     private $projectTables = [
         'articles'=>[],
         'students'=>['name'=>'Ученики'],
-        'teacher' =>['name'=>'Учителя','img'=>'pages.png']
+        'teacher' =>['name'=>'Учителя','img'=>'pages.png'],
+        'pages' =>[]
 
     ];
 
     private $templateArr = [
-        'text' =>['name','phone', 'adress'],
-        'textarea' =>['content','keywords']
+        'text' =>['name'],
+        'textarea' =>['content'],
+        'radio'=>['visible'],
+        'select'=>['menu_position' ,'parent_id'],
+        'img' =>['img'],
+        'gallery_img' =>['gallery_img']
     ];
 
     private $translate = [
@@ -72,11 +77,11 @@ class Settings
         'tables'=>['teachers','articles']
     ];
 
-    private $blockNeedle = [
-        'vg-rows'=>[],
-        'vg-img'=>[],
-        'vg-content'=>[]
-    ];
+//    private $blockNeedle = [
+//        'vg-rows'=>[],
+//        'vg-img'=>['img'],
+//        'vg-content'=>['content']
+//    ];
 
     static public function get($property){
         return self::instance()->$property;
