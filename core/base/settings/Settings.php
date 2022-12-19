@@ -65,7 +65,12 @@ class Settings
     ];
 
     private $translate = [
-        'name'=>['Название', 'Не более 100 символов']
+        'name'=>['Название', 'Не более 100 символов'],
+        'content'=>['Описание', 'Не более 200 символов'],
+        'gallery_img'=>['Галерея изображений', 'Не более 10 изображений'],
+        'img'=>['Главное изображение'],
+        'menu_position'=>['Позиция в меню', 'ewq'],
+        'parent_id'=>['Категории', 'eуцйwq']
     ];
 
     private $radio = [
@@ -74,14 +79,14 @@ class Settings
 
     private $rootItems = [
         'name'=>'Корневая',
-        'tables'=>['teachers','articles']
+        'tables'=>['articles']
     ];
 
-//    private $blockNeedle = [
-//        'vg-rows'=>[],
-//        'vg-img'=>['img'],
-//        'vg-content'=>['content']
-//    ];
+    private $blockNeedle = [
+        'vg-rows'=>[],
+        'vg-img'=>['img'],
+        'vg-content'=>['content']
+    ];
 
     static public function get($property){
         return self::instance()->$property;

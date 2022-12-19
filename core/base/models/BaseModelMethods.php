@@ -176,14 +176,12 @@ abstract  class BaseModelMethods
 
                 if($item['on']){
 
-                    $join_fields = [];
-                    $a = $item['on']['fields']?count($item['on']['fields']):0;
                     switch (2){
-                        case $a:
+                        case (is_array($item['on']['fields']) && count($item['on']['fields'])):
                             $join_fields = $item['on']['fields'];
                             break;
 
-                        case count($item['on']):
+                        case (is_array($item['on']) && count($item['on'])):
                             $join_fields = $item['on'];
                             break;
 

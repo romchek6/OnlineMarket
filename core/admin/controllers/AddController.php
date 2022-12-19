@@ -33,7 +33,6 @@ class AddController extends BaseAdmin
         if(in_array($this->table , $rootItems['tables'])){
             $this->foreignData[$arr['COLUMN_NAME']][0]['id'] = 0;
             $this->foreignData[$arr['COLUMN_NAME']][0]['name'] = $rootItems['name'];
-
         }
 
         $columns = $this->model->showColumns($arr['REFERENCED_TABLE_NAME']);

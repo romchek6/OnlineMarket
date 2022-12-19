@@ -1,4 +1,4 @@
-php_flag magic_qoutes_gpc off
+php_flag magic_quotes_gpc off
 
 AddDefaultCharset utf_8
 
