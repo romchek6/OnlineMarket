@@ -43,6 +43,8 @@ class Settings
 
     private $expansion = 'core/admin/expansion/';
 
+    private $messages = 'core/base/messages/';
+
     private $defaultTable = 'students';
 
     private $formTemplates = PATH . 'core/admin/views/include/form_templates/';
@@ -57,7 +59,7 @@ class Settings
 
     private $templateArr = [
         'text' =>['name'],
-        'textarea' =>['content'],
+        'textarea' =>['content','keywords','description'],
         'radio'=>['visible'],
         'select'=>['menu_position' ,'parent_id'],
         'img' =>['img'],
@@ -67,10 +69,12 @@ class Settings
     private $translate = [
         'name'=>['Название', 'Не более 100 символов'],
         'content'=>['Описание', 'Не более 200 символов'],
-        'gallery_img'=>['Галерея изображений', 'Не более 10 изображений'],
-        'img'=>['Главное изображение'],
-        'menu_position'=>['Позиция в меню', 'ewq'],
-        'parent_id'=>['Категории', 'eуцйwq']
+        'gallery_img'=>['Галерея изображений', 'Не более 20 изображений'],
+        'img'=>['Главное изображение','image/*,image/jpeg,image/png,image/gif'],
+        'menu_position'=>['Позиция в меню'],
+        'parent_id'=>['Категории'],
+        'visible' =>['Видимость','Отоброжение на сайте'],
+        'keywords' =>['Ключевые слова','Не более 70 символов']
     ];
 
     private $radio = [
@@ -84,8 +88,18 @@ class Settings
 
     private $blockNeedle = [
         'vg-rows'=>[],
-        'vg-img'=>['img'],
+        'vg-img'=>['img','gallery_img'],
         'vg-content'=>['content']
+    ];
+
+    private $validation = [
+        'name' => ['empty'=>true, 'trim' =>true],
+        'price' =>['int'=>true],
+        'login' =>['empty' => true, 'trim'=>true],
+        'password' => ['crypt' => true],
+        'content' => ['count'=>200,'trim'=>true],
+        'keywords' =>['count'=>70,'trim'=>true],
+        'description' => ['count' =>160 , 'trim'=> true],
     ];
 
     static public function get($property){

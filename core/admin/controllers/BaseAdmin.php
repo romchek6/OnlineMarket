@@ -7,6 +7,8 @@ use core\base\controllers\BaseController;
 use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
 
+include $_SERVER['DOCUMENT_ROOT'] . PATH . 'libraries/functions.php';
+
 abstract class BaseAdmin extends BaseController
 {
 
@@ -22,13 +24,16 @@ abstract class BaseAdmin extends BaseController
     protected $menu;
     protected $title;
 
+    protected $fileArray;
+
+    protected $messages;
+
     protected $translate;
     protected $blocks = [];
 
     protected $templateArr;
     protected $formTemplates;
     protected $noDelete;
-
 
     protected function inputData(){
 
@@ -42,6 +47,8 @@ abstract class BaseAdmin extends BaseController
 
         if(!$this->templateArr) $this->templateArr = Settings::get('templateArr');
         if(!$this->formTemplates) $this->formTemplates = Settings::get('formTemplates');
+
+        if(!$this->messages) $this->messages = include $_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('messages') . 'informationMessages.php';
 
         $this->sendNoCacheHeaders();
 
@@ -201,6 +208,196 @@ abstract class BaseAdmin extends BaseController
             }
         }
 
+    }
+
+    protected function checkPost($settings = false){
+
+        if($this->isPost()){
+            $this->clearPostFields($settings);
+            $this->table = $this->clearStr($_POST['table']);
+            unset($_POST['table']);
+
+            if($this->table){
+                $this->createTableData($settings);
+                $this->editData();
+            }
+        }
+
+    }
+
+    protected function addSessionData($arr = []){
+        if(!$arr) $arr = $_POST;
+
+        foreach ($arr as $key => $item){
+            $_SESSION['res'][$key] = $item;
+        }
+
+        $this->redirect();
+
+    }
+
+    protected function countChar($str , $counter , $answer ,  $arr =[]){
+
+        if(mb_strlen($str) > $counter){
+
+            $str_res = mb_str_replace('$1', $answer ,$this->messages['count'] );
+            $str_res = mb_str_replace('$2', $counter , $str_res );
+
+            $_SESSION['res']['answer'] = '<div class="error">' . $str_res . '</div>';
+            $this->addSessionData($arr);
+
+        }
+
+    }
+
+    protected function emptyFields($str , $answer , $arr =[]){
+
+        if(empty($str)){
+            $_SESSION['res']['answer'] = '<div class="error">'. $this->messages['empty'] . ' ' . $answer . '</div>';
+            $this->addSessionData($arr);
+        }
+
+    }
+
+    protected function clearPostFields($settings , &$arr = []){
+
+        if(!$arr) $arr = &$_POST;
+        if(!$settings) $settings = Settings::instance();
+
+        $id = $_POST[$this->columns['id_row']]?:false;
+
+        $validate = $settings::get('validation');
+        if(!$this->translate) $this->translate = $settings::get('translate');
+
+        foreach ($arr as $key => $item){
+            if(is_array($item)){
+                $this->clearPostFields($settings ,$item);
+            }else{
+                if(is_numeric($item)){
+                    $arr[$key] = $this->clearNum($item);
+                }
+
+                if($validate){
+
+                    if($validate[$key]){
+
+                        if($this->translate[$key]){
+                            $answer = $this->translate[$key][0];
+                        }else{
+                            $answer = $key;
+                        }
+
+                        if($validate[$key]['crypt']){
+                            if($id){
+                                if(empty($item)){
+                                    unset($arr[$key]);
+                                    continue;
+                                }
+
+                                $arr[$key] = md5($item);
+                            }
+                        }
+
+                        if($validate[$key]['empty']) $this->emptyFields($item, $answer, $arr);
+
+                        if($validate[$key]['trim']) $arr[$key] = trim($item);
+
+                        if($validate[$key]['int']) $arr[$key] = $this->clearNum($item);
+
+                        if($validate[$key]['count']) $this->countChar($item,$validate[$key]['count'], $answer, $arr);
+
+                    }
+                }
+            }
+        }
+
+        return true;
+
+    }
+
+    protected function editData($returnId = false){
+
+        $id = false;
+        $method = 'add';
+
+        if($_POST[$this->columns['id_row']]){
+            $id = is_numeric($_POST[$this->columns['id_row']]) ?
+                $this->clearNum($_POST[$this->columns['id_row']]):
+                $this->clearStr($_POST[$this->columns['id_row']]);
+            if($id){
+                $where = [$this->columns['id_row'] => $id];
+                $method = 'edit';
+            }
+        }
+
+        foreach ($this->columns as $key => $item){
+            if(is_array($item) &&($item['Type'] ==='date' || $item['Type'] ==='datetime')){
+                !$_POST[$key] && $_POST[$key] = 'NOW()';
+            }
+        }
+
+        $this->createFile();
+
+        $this->createAlias($id);
+
+        $this->updateMenuPosition();
+
+        $except = $this->checkExceptFields();
+
+        $res_id = $this->model->$method($this->table,[
+            'files'=> $this->fileArray,
+            'where'=> $where,
+            'return_id' =>true,
+            'except' =>$except
+        ]);
+
+        if(!$id && $method ==='add'){
+            $_POST[$this->columns['id_row']] = $res_id;
+            $answerSuccess = $this->messages['addSuccess'];
+            $answerFail = $this->messages['addFail'];
+        }else{
+            $answerSuccess = $this->messages['editSuccess'];
+            $answerFail = $this->messages['editFail'];
+        }
+
+        $this->expansion(get_defined_vars());
+
+        $result = $this->checkAlias($_POST[$this->columns['id_row']]);
+
+        if($res_id){
+            $_SESSION['res']['answer'] = '<div class ="success">' . $answerSuccess .'</div>';
+
+            if(!$returnId) $this->redirect();
+
+            return $_POST[$this->columns['id_row']];
+        }else{
+
+            $_SESSION['res']['answer'] = '<div class ="error">' . $answerFail .'</div>';
+
+            if(!$returnId) $this->redirect();
+
+        }
+
+    }
+
+    protected function checkExceptFields(){
+        return 5;
+    }
+
+    protected function createFile(){
+
+    }
+
+    protected function updateMenuPosition(){
+
+    }
+
+    protected function createAlias($id = false){
+
+    }
+
+    protected function checkAlias($id){
+        return 5;
     }
 
 }
