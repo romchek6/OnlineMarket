@@ -1,5 +1,7 @@
 php_flag magic_quotes_gpc off
 
+php_value upload_max_fullsize 100M
+
 AddDefaultCharset utf_8
 
 DirectoryIndex index.php

@@ -6,6 +6,7 @@ use core\admin\models\Model;
 use core\base\controllers\BaseController;
 use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
+use libraries\FileEdit;
 
 include $_SERVER['DOCUMENT_ROOT'] . PATH . 'libraries/functions.php';
 
@@ -399,6 +400,9 @@ abstract class BaseAdmin extends BaseController
     }
 
     protected function createFile(){
+
+        $fileEdit = new FileEdit();
+        $this->fileArray = $fileEdit->addFile();
 
     }
 
