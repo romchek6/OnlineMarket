@@ -2,7 +2,7 @@
 
 defined('VG_ACCESS') or die('Access denied');
 
-const SITE_URL = 'http://onlinestore';
+const SITE_URL = 'https://habr.com';
 const PATH = '/';
 
 const HOST = 'localhost';
