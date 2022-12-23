@@ -1,0 +1,132 @@
+Fault: 07-12-2022 0:36:59 - Ошибка подключения к базе данныхЖ 1049 Unknown database 'onlinestorep'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line20
+
+Fault: 07-12-2022 2:07:31 - ошибка в SQL запросе: SELECT * FROM article1 - 1146 Table 'onlinestore.article1' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line33
+
+Fault: 07-12-2022 2:08:11 - ошибка в SQL запросе: SELECT name1 FROM article - 1054 Unknown column 'name1' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line33
+
+Fault: 08-12-2022 23:35:41 - ошибка в SQL запросе: SELECT articles.id,articles.name FROM articles  WHERE articles.name IN ('Roma','ivan') AND articles.surname NOT IN (SELECT name FROM students WHERE id=1)  ORDER BY articles.name DESC,articles.price DESC  - 1146 Table 'onlinestore.students' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line33
+
+Fault: 08-12-2022 23:36:18 - ошибка в SQL запросе: SELECT articles.id,articles.name FROM articles  WHERE articles.name IN ('Roma','ivan') AND articles.surname NOT IN (SELECT name FROM articles WHERE id=1)  ORDER BY articles.name DESC,articles.price DESC  - 1054 Unknown column 'articles.surname' in 'IN/ALL/ANY subquery'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line33
+
+Fault: 09-12-2022 1:51:52 - ошибка в SQL запросе: SELECT teachers.id FROM teachers  WHERE teachers.name = 'Roma'   LIMIT 1 - 1146 Table 'onlinestore.teachers' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line33
+
+Fault: 09-12-2022 20:37:59 - ошибка в SQL запросе: INSERT INTO articles (name,content,price,) VALUES ('petr','petrpetrpetr','85',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('petr','petrpetrpetr','85',)' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line44
+
+Fault: 09-12-2022 20:39:13 - ошибка в SQL запросе: INSERT INTO articles (name,content,price,) VALUES ('petr','petrpetrpetr','85',) - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('petr','petrpetrpetr','85',)' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line44
+
+Fault: 09-12-2022 20:49:06 - ошибка в SQL запросе: INSERT INTO articles (name,content,price,gallery_img,img) VALUES ('petr','petrpetrpetr','85','["red.jpg","blue.jpg","black.jpg"]','main_img.jpg') - 1054 Unknown column 'gallery_img' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line44
+
+Fault: 10-12-2022 23:17:49 - ошибка в SQL запросе: INSERT INTO articles (name) VALUES ('Masha') - 1364 Field 'content' doesn't have a default value
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 10-12-2022 23:18:55 - ошибка в SQL запросе: INSERT INTO articles (name) VALUES ('Masha') - 1364 Field 'price' doesn't have a default value
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 0:15:56 - ошибка в SQL запросе: UPDATE articles SET   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 0:18:16 - ошибка в SQL запросе: UPDATE articles SET   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 0:18:43 - ошибка в SQL запросе: UPDATE articles SET   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 0:20:51 - ошибка в SQL запросе: UPDATE articles SET files=''  - 1054 Unknown column 'files' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 3:16:18 - ошибка в SQL запросе: INSERT INTO $table (name,content,student_id) VALUES ('teacher - 0',0,'1') - 1146 Table 'onlinestore.$table' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 3:23:20 - ошибка в SQL запросе: UPDATE articles SET id=,name=,img= WHERE articles.id = '1'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name=,img= WHERE articles.id = '1'' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 3:27:42 - ошибка в SQL запросе: UPDATE articles SET id=NULL,name=NULL,img=NULL WHERE articles.id = '1'  - 1048 Column 'id' cannot be null
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 15:58:31 - ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 11-12-2022 15:59:17 - ошибка в SQL запросе: SHOW COLUMNS FROM  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line43
+
+Fault: 14-12-2022 16:50:35 - ошибка в SQL запросе: SELECT students.id as id,students.name,students.content FROM students     - 1054 Unknown column 'students.content' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 15-12-2022 23:21:18 - ошибка в SQL запросе: SELECT * FROM information_schema.KEY_COLUMN_USAGE
+                  WHERE TABLE_SCHEMA = 'onlinestore' AND TABLE_NAME = 'articles'
+                  CONSTRAINT_NAME <> 'PRIMARY' AND REFERENCED_TABLE_NAME is not null - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONSTRAINT_NAME <> 'PRIMARY' AND REFERENCED_TABLE_NAME is not null' at line 3
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 15-12-2022 23:21:45 - ошибка в SQL запросе: SELECT * FROM information_schema.KEY_COLUMN_USAGE
+                  WHERE TABLE_SCHEMA = 'onlinestore' AND TABLE_NAME = 'articles'
+                  CONSTRAINT_NAME <> 'PRIMERY' AND REFERENCED_TABLE_NAME is not null - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONSTRAINT_NAME <> 'PRIMERY' AND REFERENCED_TABLE_NAME is not null' at line 3
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 15-12-2022 23:21:57 - ошибка в SQL запросе: SELECT * FROM information_schema.KEY_COLUMN_USAGE
+                  WHERE TABLE_SCHEMA = 'onlinestore' AND TABLE_NAME = 'articles'
+                  CONSTRAINT_NAME <> PRIMERY AND REFERENCED_TABLE_NAME is not null - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONSTRAINT_NAME <> PRIMERY AND REFERENCED_TABLE_NAME is not null' at line 3
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 15-12-2022 23:22:01 - ошибка в SQL запросе: SELECT * FROM information_schema.KEY_COLUMN_USAGE
+                  WHERE TABLE_SCHEMA = 'onlinestore' AND TABLE_NAME = 'articles'
+                  CONSTRAINT_NAME <> PRIMARY AND REFERENCED_TABLE_NAME is not null - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CONSTRAINT_NAME <> PRIMARY AND REFERENCED_TABLE_NAME is not null' at line 3
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 16-12-2022 16:01:52 - ошибка в SQL запросе: SELECT articles.id as id,articles. FROM articles     - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM articles' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 16-12-2022 16:15:57 - ошибка в SQL запросе: SELECT pages.pages as id,pages. FROM pages     - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM pages' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 16-12-2022 16:16:22 - ошибка в SQL запросе: SELECT pages.pages as id,pages.name FROM pages     - 1054 Unknown column 'pages.pages' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 16-12-2022 16:34:55 - ошибка в SQL запросе: SHOW COLUMNS FROM teachers - 1146 Table 'onlinestore.teachers' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 17-12-2022 1:11:18 - ошибка в SQL запросе: SELECT teacher.COUNT(*) as count FROM teacher     - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM teacher' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 18-12-2022 1:44:08 - ошибка в SQL запросе: INSERT INTO teacher (name,img,menu_position) VALUES ('Lena','2.jpg','1'),('eqwewqe','3.jpg',NULL,NULL) - 1136 Column count doesn't match value count at row 2
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
