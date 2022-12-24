@@ -4,7 +4,7 @@ namespace core\admin\expansion;
 
 use core\base\controllers\Singleton;
 
-class ArticlesExpansion1
+class ArticlesExpansion
 {
     use Singleton;
 

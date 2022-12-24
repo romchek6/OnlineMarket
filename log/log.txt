@@ -4138,3 +4138,115 @@ Fault: 23-12-2022 4:17:13 - Не верное имя файла для подк�
 fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
 In line34
 
+Fault: 24-12-2022 0:58:34 - Не найдены поля в таблице - students
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 0:58:35 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 0:58:38 - Не найдены поля в таблице - teacher
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 0:58:39 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 0:58:39 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 0:58:41 - Не найдены поля в таблице - teacher
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 0:58:42 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 0:59:56 - Не найдены поля в таблице - teacher
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 0:59:57 - Не найдены поля в таблице - teacher
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 0:59:58 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:17:03 - Не найдены поля в таблице - teacher
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 3:17:04 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:17:04 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:29:09 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:29:09 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:45:36 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:45:36 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:46:54 - Не найдены поля в таблице - students
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 3:46:54 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:46:55 - Не найдены поля в таблице - teacher
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 3:46:56 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 3:46:56 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 4:05:51 - Не найдены поля в таблице - students
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 4:05:51 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 24-12-2022 4:08:05 - Не найдены поля в таблице - students
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 4:08:05 - Не найдены поля в таблице - students
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 4:08:05 - Не найдены поля в таблице - students
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 24-12-2022 4:08:05 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
