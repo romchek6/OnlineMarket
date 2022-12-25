@@ -313,7 +313,7 @@ abstract class BaseModel extends BaseModelMethods
 
     }
 
-    final public function showTable(){
+    final public function showTables(){
 
         $query = 'SHOW TABLES';
 

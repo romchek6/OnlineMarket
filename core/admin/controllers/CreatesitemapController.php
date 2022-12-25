@@ -9,7 +9,11 @@ class CreatesitemapController extends BaseAdmin
 
     use BaseMethods;
 
-    protected $linkArr = [];
+    protected $all_links = [];
+    protected $temp_links = [];
+
+    protected $maxLinks = 5000;
+
     protected $parsingLogFile = 'parsing_log.txt';
     protected $fileArr = ['jpg' , 'png' , 'jpeg' , 'gif' , 'xls' , 'xlsx' , 'pdf', 'mp4','mpeg' ,'mp3'];
 
@@ -18,21 +22,89 @@ class CreatesitemapController extends BaseAdmin
         'get'=>[]
     ];
 
-    protected function inputData(){
+    protected function inputData($links_counter = 1){
 
         if(!function_exists('curl_init')){
 
-            $this->writeLog('Отсутствует библиотека CURL');
-            $_SESSION['res']['answer'] = '<div class ="error">Library CURL as absent. Creation sitemap is impossible</div>';
-            $this->redirect();
+            $this->cancel(0, 'Library CURL as absent. Creation sitemap is impossible','',true);
+
+        }
+
+        if(!$this->userId) $this->execBase();
+
+        if(!$this->checkParsingTable()){
+
+            $this->cancel(0, 'You have problem with database table parsing_data ','',true);
+
         }
 
         set_time_limit(0);
 
-        if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . 'log/' . $this->parsingLogFile))
-            @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . 'log/' . $this->parsingLogFile);
+        $reserve = $this->model->get('parsing_data')[0];
 
-        $this->parsing(SITE_URL);
+        foreach ($reserve as $name => $item){
+
+            if($item) $this->$name = json_decode($item);
+                else $this->$name = [SITE_URL];
+
+        }
+
+        $this->maxLinks = (int)$links_counter > 1 ? ceil($this->maxLinks /$links_counter) :$this->maxLinks;
+
+        while ($this->temp_links){
+
+            $temp_links_count = count($this->temp_links);
+
+            $links = $this->temp_links;
+
+            $this->temp_links = [];
+
+            if($temp_links_count > $this->maxLinks){
+
+                $links = array_chunk($links , ceil($temp_links_count/$this->maxLinks));
+
+                $count_chunks = count($links);
+
+                for($i = 0;$i<$count_chunks ;$i++){
+
+                    $this->parsing($links[$i]);
+
+                    unset($links[$i]);
+
+                    if($links){
+
+                        $this->model->edit('parsing_data',[
+                           'fields'=>[
+                               'temp_links'=> json_encode(array_merge(...$links)),
+                               'all_links'=>json_encode($this->all_links)
+                           ]
+                        ]);
+
+                    }
+
+                }
+
+            }else{
+
+                $this->parsing($links);
+
+            }
+
+            $this->model->edit('parsing_data',[
+                'fields'=>[
+                    'temp_links'=> json_encode($this->temp_links),
+                    'all_links'=>json_encode($this->all_links)
+                ]
+            ]);
+
+        }
+
+        $this->model->edit('parsing_data',[
+            'fields'=>[
+                'temp_links' => '',
+                'all_links' => ''
+            ]
+        ]);
 
         $this->createSitemap();
 
@@ -59,9 +131,9 @@ class CreatesitemapController extends BaseAdmin
 
         if(!preg_match('/Content-Type:\s+text\/html/ui' , $out)){
 
-            unset($this->linkArr[$index]);
+            unset($this->all_links[$index]);
 
-            $this->linkArr = array_values($this->linkArr);
+            $this->all_links = array_values($this->all_links);
 
             return;
 
@@ -72,9 +144,9 @@ class CreatesitemapController extends BaseAdmin
 
             $this->writeLog('Не коректная ссылка при парсинге - ' . $url ,$this->parsingLogFile);
 
-            unset($this->linkArr[$index]);
+            unset($this->all_links[$index]);
 
-            $this->linkArr = array_values($this->linkArr);
+            $this->all_links = array_values($this->all_links);
 
             $_SESSION['res']['answer'] = '<div class ="error">Incorrect Link in parsing - '. $url .'<br>Sitemap is created</div>';
 
@@ -88,39 +160,42 @@ class CreatesitemapController extends BaseAdmin
 
 
         if($links[2]){
+
             foreach ($links[2] as $link){
 
                 if($link === '/' || $link === SITE_URL . '/') continue;
 
-//                foreach ($this->fileArr as $ext){
-//
-//                    if($ext){
-//
-//                        $ext = addslashes($ext);
-//                        $ext = str_replace('.' , '\.' , $ext);
-//
-//                        if(preg_match('/' . $ext . '\s*?$/ui' , $link)){
-//
-//                            continue 2;
-//
-//                        }
-//
-//                    }
-//
-//                }
+                foreach ($this->fileArr as $ext){
+
+                    if($ext){
+
+                        $ext = addslashes($ext);
+                        $ext = str_replace('.' , '\.' , $ext);
+
+                        if(preg_match('/' . $ext . '(\s*?$|\?[^\/]*$)/ui' , $link)){
+
+                            continue 2;
+
+                        }
+
+                    }
+
+                }
 
 
                 if(strpos($link , '/') === 0){
                     $link = SITE_URL . $link;
                 }
 
-                if(!in_array($link , $this->linkArr) && $link !== '#' && strpos($link, SITE_URL) === 0){
+                $site_url = mb_str_replace('.','\.' , mb_str_replace('/','\/',SITE_URL));
+
+                if(!in_array($link , $this->all_links) && !preg_match('/^('. $site_url .')?\/?#[^\/]*?$/ui',$link) && strpos($link, SITE_URL) === 0){
 
 
                    if($this->filter($link)){
 
-                       $this->linkArr[]  = $link;
-                       $this->parsing($link, count($this->linkArr) - 1);
+                       $this->all_links[]  = $link;
+                       $this->parsing($link, count($this->all_links) - 1);
 
                    }
 
@@ -129,13 +204,87 @@ class CreatesitemapController extends BaseAdmin
             }
         }
 
-
-
     }
 
     protected function filter($link){
 
+        if($this->filterArr){
+
+            foreach ($this->filterArr as $type =>$values){
+
+                if($values){
+
+                    foreach ($values as $item){
+
+                        $item = str_replace('/', '\/' , addslashes($item));
+
+                        if($type === 'url'){
+                            if(preg_match('/^[^\?]*'. $item .'/ui' , $link)){
+                                return false;
+                            }
+                        }
+
+                        if($type === 'get'){
+                            if(preg_match('/(\?|&amp;|=|&)'. $item .'(=|&amp;|&|$)/ui', $link)){
+                                return false;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
         return true;
+
+    }
+
+    protected  function checkParsingTable(){
+
+        $tables =  $this->model->showTables();
+
+        if(!in_array('parsing_data',  $tables)){
+
+            $query = 'CREATE TABLE parsing_data (all_links text, temp_links text)';
+
+            if(!$this->model->query($query, 'c') ||
+                !$this->model->add('parsing_data', ['fields'=>['all_links'=>'','temp_links'=>'']])
+            ){ return false;}
+
+        }
+
+        return true;
+
+    }
+
+    protected function cancel($success = 0 , $message = '', $log_message = '' , $exit = false){
+
+        $exitArr = [];
+
+        $exitArr['success'] = $success;
+        $exitArr['message'] = $message ? $message : 'ERROR PARSING';
+        $log_message = $log_message? $log_message:$exitArr['message'];
+
+        $class = 'success';
+
+        if(!$exitArr['success']){
+
+            $class = 'error';
+
+            $this->writeLog($log_message, 'parsing_log.txt');
+
+        }
+
+        if($exit){
+
+            $exitArr['message'] = '<div class="' . $class . '">' . $exitArr['message'] . '</div>';
+            $exit(json_encode($exitArr));
+
+        }
+
 
     }
 
