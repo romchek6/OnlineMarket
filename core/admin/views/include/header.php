@@ -6,9 +6,9 @@
     <meta type="keywords" content="...">
     <meta type="description" content="...">
     <title>Document</title>
-    <?php foreach ($this->styles as $style):?>
-    <link rel="stylesheet" href="<?= $style?>">
-    <?php endforeach; ?>
+
+    <?php $this->getStyles() ?>
+
     <link rel="stylesheet" href="/template/admin/css/jquery.Jcrop.min.css">
 </head>
 <body>

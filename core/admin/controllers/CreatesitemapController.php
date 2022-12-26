@@ -106,6 +106,16 @@ class CreatesitemapController extends BaseAdmin
             ]
         ]);
 
+        if($this->all_links){
+
+            foreach ($this->all_links as $key => $link){
+
+                if(!$this->filter($link)) unset($this->all_links[$key]);
+
+            }
+
+        }
+
         $this->createSitemap();
 
         !$_SESSION['res']['answer'] && $_SESSION['res']['answer'] = '<div class ="success">sitemap is created</div>';
@@ -114,94 +124,134 @@ class CreatesitemapController extends BaseAdmin
 
     }
 
-    protected function parsing($url , $index = 0){
+    protected function parsing($urls){
 
-        $curl = curl_init();
+        if(!$urls) return;
 
-        curl_setopt($curl, CURLOPT_URL , $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HEADER , true);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 120);
-        curl_setopt($curl, CURLOPT_RANGE, 0 - 4194304);
+        $curlMulti = curl_multi_init();
 
-        $out = curl_exec($curl);
+        $curl = [];
 
-        curl_close($curl);
+        foreach ($urls as $i => $url){
 
-        if(!preg_match('/Content-Type:\s+text\/html/ui' , $out)){
+            $curl[$i] = curl_init();
+            curl_setopt($curl[$i], CURLOPT_URL , $url);
+            curl_setopt($curl[$i], CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl[$i], CURLOPT_HEADER , true);
+            curl_setopt($curl[$i], CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($curl[$i], CURLOPT_TIMEOUT, 120);
+            curl_setopt($curl[$i], CURLOPT_ENCODING , 'gzip,deflate');
 
-            unset($this->all_links[$index]);
-
-            $this->all_links = array_values($this->all_links);
-
-            return;
-
+            curl_multi_add_handle($curlMulti , $curl[$i]);
 
         }
 
-        if(!preg_match('/HTTP\/\d\.?\d?\s+20\d/ui',$out)){
+        do{
 
-            $this->writeLog('Не коректная ссылка при парсинге - ' . $url ,$this->parsingLogFile);
+            $status = curl_multi_exec($curlMulti, $active);
+            $info = curl_multi_info_read($curlMulti);
 
-            unset($this->all_links[$index]);
+            if(false !== $info){
 
-            $this->all_links = array_values($this->all_links);
+                if($info['result'] !== 0){
 
-            $_SESSION['res']['answer'] = '<div class ="error">Incorrect Link in parsing - '. $url .'<br>Sitemap is created</div>';
+                    $i = array_search($info['handle'], $curl);
 
-            return;
+                    $error = curl_errno($curl[$i]);
+                    $message = curl_error($curl[$i]);
+                    $header = curl_getinfo($curl[$i]);
+
+                    if($error != 0 ){
+                        $this->cancel(0,'Error loading'. $header['url'] .' http code: '. $header['http_code'] .' error: ' . $error . ' message ' . $message);
+                    }
+
+                }
+
+            }
+
+            if($status >0){
+
+                $this->cancel(0 , curl_multi_strerror($status));
+
+            }
+
+        }while($status === CURLM_CALL_MULTI_PERFORM || $active);
+
+        $result = [];
+
+        foreach ($urls as $i => $url){
+
+            $result[$i] = curl_multi_getcontent($curl[$i]);
+            curl_multi_remove_handle($curlMulti , $curl[$i]);
+            curl_close($curl[$i]);
+
+            if(!preg_match('/Content-Type:\s+text\/html/ui' , $result[$i])) {
+
+                $this->cancel(0 ,'Incorrect content type ' . $url);
+                continue;
+
+            }
+            if(!preg_match('/HTTP\/\d\.?\d?\s+20\d/ui' , $result[$i])) {
+
+                $this->cancel(0 ,'Incorrect server code ' . $url);
+                continue;
+
+            }
+
+            $this->createLinks($result[$i]);
 
         }
 
+        curl_multi_close($curlMulti);
 
+    }
 
-        preg_match_all('/<a\s*?[^>]*?href\s*?=(["\'])(.+?)\1[^>]*?>/ui' , $out , $links);
+    protected function createLinks($content){
 
+        if($content){
 
-        if($links[2]){
+            preg_match_all('/<a\s*?[^>]*?href\s*?=(["\'])(.+?)\1[^>]*?>/ui' , $content , $links);
 
-            foreach ($links[2] as $link){
+            if($links[2]){
 
-                if($link === '/' || $link === SITE_URL . '/') continue;
+                foreach ($links[2] as $link){
 
-                foreach ($this->fileArr as $ext){
+                    if($link === '/' || $link === SITE_URL . '/') continue;
 
-                    if($ext){
+                    foreach ($this->fileArr as $ext){
 
-                        $ext = addslashes($ext);
-                        $ext = str_replace('.' , '\.' , $ext);
+                        if($ext){
 
-                        if(preg_match('/' . $ext . '(\s*?$|\?[^\/]*$)/ui' , $link)){
+                            $ext = addslashes($ext);
+                            $ext = str_replace('.' , '\.' , $ext);
 
-                            continue 2;
+                            if(preg_match('/' . $ext . '(\s*?$|\?[^\/]*$)/ui' , $link)){
+
+                                continue 2;
+
+                            }
 
                         }
 
                     }
 
-                }
 
+                    if(strpos($link , '/') === 0){
+                        $link = SITE_URL . $link;
+                    }
 
-                if(strpos($link , '/') === 0){
-                    $link = SITE_URL . $link;
-                }
+                    $site_url = mb_str_replace('.','\.' , mb_str_replace('/','\/',SITE_URL));
 
-                $site_url = mb_str_replace('.','\.' , mb_str_replace('/','\/',SITE_URL));
+                    if(!in_array($link , $this->all_links) && !preg_match('/^('. $site_url .')?\/?#[^\/]*?$/ui',$link) && strpos($link, SITE_URL) === 0){
 
-                if(!in_array($link , $this->all_links) && !preg_match('/^('. $site_url .')?\/?#[^\/]*?$/ui',$link) && strpos($link, SITE_URL) === 0){
+                        $this->temp_links[] = $link;
+                        $this->all_links[]  = $link;
 
-
-                   if($this->filter($link)){
-
-                       $this->all_links[]  = $link;
-                       $this->parsing($link, count($this->all_links) - 1);
-
-                   }
+                    }
 
                 }
-
             }
+
         }
 
     }
@@ -290,7 +340,45 @@ class CreatesitemapController extends BaseAdmin
 
     protected function createSitemap(){
 
+        $dom = new \domDocument('1.0', 'utf-8');
+        $dom->formatOutput = true;
 
+        $root = $dom->createElement('urlset');
+        $root->setAttribute('xmlns' , 'http://www.sitemap.org/schemas/sitemap/0.9');
+        $root->setAttribute('xmlns:xls' , 'http://w3.org/2001/XMLSchema-instance');
+        $root->setAttribute('xsi:schemaLocation','http://www.sitemaps.org/shemas/sitemap/0.9 http://www.sitemaps.org/shemas/sitemap/0.9/sitemap.xsd');
+
+        $dom->appendChild($root);
+
+        $sxe = simplexml_import_dom($dom);
+
+        if($this->all_links){
+
+            $date = new \DateTime();
+            $lastMod = $date->format('Y-m-d') . 'T' . $date->format('H:i:s+01:00');
+
+            foreach ($this->all_links as $item){
+
+                $elem = trim(mb_substr($item, mb_strlen(SITE_URL)) , '/');
+                $elem = explode('/' , $elem);
+
+                $count = '0.' . (count($elem) - 1);
+                $priority = 1 - (float)$count;
+
+                if($priority == 1) $priority = '1.0';
+
+                $urlMain = $sxe->addChild('url');
+
+                $urlMain->addChild('loc', htmlspecialchars($item));
+                $urlMain->addChild('lastmod', $lastMod);
+                $urlMain->addChild('change', 'weekly');
+                $urlMain->addChild('priority' , $priority);
+
+            }
+
+        }
+
+        $dom->save($_SERVER['DOCUMENT_ROOT'] . PATH . 'sitemap.xml');
 
     }
 

@@ -8,3 +8,38 @@ Fault: 25-12-2022 3:34:14 - Не коректная ссылка при парс
 Fault: 25-12-2022 3:34:14 - Не коректная ссылка при парсинге - https://prominvest19.ru/user/agreement
 Fault: 25-12-2022 3:34:15 - Не коректная ссылка при парсинге - https://prominvest19.ru/user/agreement
 Fault: 25-12-2022 3:34:15 - Не коректная ссылка при парсинге - https://prominvest19.ru/ugolkameni/folder/ugol-kamennyy-marki--dr-dpk-dom-domssh
+Fault: 26-12-2022 4:13:55 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/ugol-kamennyy-marki--dr-dpk-dom-domssh
+Fault: 26-12-2022 4:13:55 - Incorrect server code https://prominvest19.ru/user/agreement
+Fault: 26-12-2022 4:13:56 - Incorrect server code https://prominvest19.ru/ugolkameni/product-dpk/
+Fault: 26-12-2022 4:13:56 - Incorrect content type https://prominvest19.ru/f/dogovorpostavki.doc
+Fault: 26-12-2022 4:13:56 - Incorrect content type https://prominvest19.ru/f/obrazets_zayavki_na_ugol.docx
+Fault: 26-12-2022 4:13:56 - Incorrect content type https://prominvest19.ru/f/nerezident.doc
+Fault: 26-12-2022 4:13:56 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/kotly
+Fault: 26-12-2022 4:16:37 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/ugol-kamennyy-marki--dr-dpk-dom-domssh
+Fault: 26-12-2022 4:16:37 - Incorrect server code https://prominvest19.ru/user/agreement
+Fault: 26-12-2022 4:16:38 - Incorrect server code https://prominvest19.ru/ugolkameni/product-dpk/
+Fault: 26-12-2022 4:16:38 - Incorrect content type https://prominvest19.ru/f/dogovorpostavki.doc
+Fault: 26-12-2022 4:16:38 - Incorrect content type https://prominvest19.ru/f/obrazets_zayavki_na_ugol.docx
+Fault: 26-12-2022 4:16:38 - Incorrect content type https://prominvest19.ru/f/nerezident.doc
+Fault: 26-12-2022 4:16:38 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/kotly
+Fault: 26-12-2022 4:17:12 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/ugol-kamennyy-marki--dr-dpk-dom-domssh
+Fault: 26-12-2022 4:17:12 - Incorrect server code https://prominvest19.ru/user/agreement
+Fault: 26-12-2022 4:17:13 - Incorrect server code https://prominvest19.ru/ugolkameni/product-dpk/
+Fault: 26-12-2022 4:17:13 - Incorrect content type https://prominvest19.ru/f/dogovorpostavki.doc
+Fault: 26-12-2022 4:17:13 - Incorrect content type https://prominvest19.ru/f/obrazets_zayavki_na_ugol.docx
+Fault: 26-12-2022 4:17:13 - Incorrect content type https://prominvest19.ru/f/nerezident.doc
+Fault: 26-12-2022 4:17:13 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/kotly
+Fault: 26-12-2022 4:40:54 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/ugol-kamennyy-marki--dr-dpk-dom-domssh
+Fault: 26-12-2022 4:40:54 - Incorrect server code https://prominvest19.ru/user/agreement
+Fault: 26-12-2022 4:40:54 - Incorrect server code https://prominvest19.ru/ugolkameni/product-dpk/
+Fault: 26-12-2022 4:40:54 - Incorrect content type https://prominvest19.ru/f/dogovorpostavki.doc
+Fault: 26-12-2022 4:40:54 - Incorrect content type https://prominvest19.ru/f/obrazets_zayavki_na_ugol.docx
+Fault: 26-12-2022 4:40:54 - Incorrect content type https://prominvest19.ru/f/nerezident.doc
+Fault: 26-12-2022 4:40:54 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/kotly
+Fault: 26-12-2022 4:42:30 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/ugol-kamennyy-marki--dr-dpk-dom-domssh
+Fault: 26-12-2022 4:42:30 - Incorrect server code https://prominvest19.ru/user/agreement
+Fault: 26-12-2022 4:42:31 - Incorrect server code https://prominvest19.ru/ugolkameni/product-dpk/
+Fault: 26-12-2022 4:42:31 - Incorrect content type https://prominvest19.ru/f/dogovorpostavki.doc
+Fault: 26-12-2022 4:42:31 - Incorrect content type https://prominvest19.ru/f/obrazets_zayavki_na_ugol.docx
+Fault: 26-12-2022 4:42:31 - Incorrect content type https://prominvest19.ru/f/nerezident.doc
+Fault: 26-12-2022 4:42:31 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/kotly
