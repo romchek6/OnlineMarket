@@ -1,0 +1,7 @@
+Fault: 27-12-2022 3:18:15 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/ugol-kamennyy-marki--dr-dpk-dom-domssh
+Fault: 27-12-2022 3:18:15 - Incorrect server code https://prominvest19.ru/user/agreement
+Fault: 27-12-2022 3:18:16 - Incorrect server code https://prominvest19.ru/ugolkameni/product-dpk/
+Fault: 27-12-2022 3:18:16 - Incorrect content type https://prominvest19.ru/f/dogovorpostavki.doc
+Fault: 27-12-2022 3:18:16 - Incorrect content type https://prominvest19.ru/f/obrazets_zayavki_na_ugol.docx
+Fault: 27-12-2022 3:18:16 - Incorrect content type https://prominvest19.ru/f/nerezident.doc
+Fault: 27-12-2022 3:18:16 - Incorrect server code https://prominvest19.ru/ugolkameni/folder/kotly
