@@ -13,22 +13,6 @@ class IndexController extends BaseController{
 
     protected function inputData(){
 
-        $model = Model::instance();
-
-        $res = $model->get('teacher',[
-            'where' =>['id'=>'28,33,34'],
-            'operand'=>['IN'],
-            'join'=>[
-                'stud_teach' =>['on' =>['id' ,'teacher']] ,
-                'students'=>[
-                    'fields'=>['name as student_name'],
-                    'on'=>['students' , 'id']
-                ]
-            ],
-//            'join_structure' =>true
-        ]);
-
-        exit();
     }
 
 

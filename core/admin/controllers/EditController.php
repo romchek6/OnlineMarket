@@ -13,7 +13,7 @@ class EditController extends BaseAdmin
 
     }
 
-    protected function checkOldAlias($id){
+    public function checkOldAlias($id){
 
         $tables = $this->model->showTables();
 
@@ -41,8 +41,6 @@ class EditController extends BaseAdmin
             }
 
         }
-
-
 
     }
 

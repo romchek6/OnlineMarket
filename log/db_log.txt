@@ -130,3 +130,67 @@ Fault: 18-12-2022 1:44:08 - ошибка в SQL запросе: INSERT INTO teac
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 29-12-2022 1:20:44 - ошибка в SQL запросе: SELECT teacher.*,stud_teach.students as TABLEstud_teachTABLE_students,stud_teach.teacher as TABLEstud_teachTABLE_teacher,students.name as student_name as TABLEstudentsTABLE_name as student_name,students.id as TABLEstudentsTABLE_id FROM teacher LEFT JOIN stud_teach ON teacher.id=stud_teach.teacher LEFT JOIN students ON stud_teach.students=students.id WHERE teacher.id IN ('28','33','34')    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as TABLEstudentsTABLE_name as student_name,students.id as TABLEstudentsTABLE_id ' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 29-12-2022 2:55:46 - ошибка в SQL запросе: SHOW COLUMNS FROM teacher - 1146 Table 'onlinestore.teacher' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 29-12-2022 2:56:27 - ошибка в SQL запросе: SHOW COLUMNS FROM stud_teach - 1146 Table 'onlinestore.stud_teach' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 29-12-2022 2:56:43 - ошибка в SQL запросе: SHOW COLUMNS FROM students - 1146 Table 'onlinestore.students' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 29-12-2022 2:57:34 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teacher as TABLEgoods_filtersTABLE_teacher,filters.name as TABLEfiltersTABLE_filters_name,filters.id as TABLEfiltersTABLE_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.goods LEFT JOIN filters ON goods_filters.filters=filters.id WHERE goods.id IN ('28','33','34')    - 1054 Unknown column 'goods_filters.goods' in 'on clause'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 29-12-2022 2:59:20 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teacher as TABLEgoods_filtersTABLE_teacher,filters.name as TABLEfiltersTABLE_filters_name,filters.id as TABLEfiltersTABLE_id FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teacher LEFT JOIN filters ON goods_filters.filters=filters.id WHERE goods.id IN ('28','33','34')    - 1054 Unknown column 'goods_filters.filters' in 'on clause'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 1:54:42 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teacher as TABLEgoods_filtersTABLE_teacher,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN goods_filters ON goods.id=Array.teacher LEFT JOIN filters f ON goods_filters.students=Array.id LEFT JOIN filters ON f.parent_id=Array.id WHERE goods.id IN ('28','33','34')    - 1054 Unknown column 'Array.teacher' in 'on clause'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 1:56:47 - ошибка в SQL запросе: SELECT goods.*,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN filters f ON goods.students=goods.id LEFT JOIN filters ON f.parent_id=goods.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND() ASC  - 1054 Unknown column 'goods.students' in 'on clause'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 1:57:54 - ошибка в SQL запросе: SELECT goods.*,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN filters f ON goods.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND() ASC  - 1054 Unknown column 'goods.students' in 'on clause'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 1:59:33 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teachers as TABLEgoods_filtersTABLE_teachers,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND() ASC  - 1305 FUNCTION goods.RAND does not exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 2:00:00 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teachers as TABLEgoods_filtersTABLE_teachers,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND () ASC  - 1305 FUNCTION goods.RAND does not exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 2:00:21 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teachers as TABLEgoods_filtersTABLE_teachers,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND () ASC  - 1305 FUNCTION goods.RAND does not exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 2:00:42 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teachers as TABLEgoods_filtersTABLE_teachers,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND ()  ASC  - 1305 FUNCTION goods.RAND does not exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 2:01:02 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teachers as TABLEgoods_filtersTABLE_teachers,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND()  ASC  - 1305 FUNCTION goods.RAND does not exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 30-12-2022 2:04:57 - ошибка в SQL запросе: SELECT goods.*,goods_filters.students as TABLEgoods_filtersTABLE_students,goods_filters.teachers as TABLEgoods_filtersTABLE_teachers,f.name as TABLEfTABLE_student_name,f.content as TABLEfTABLE_content,f.id as TABLEfTABLE_id,filters.id as TABLEfiltersTABLE_id,filters.name as TABLEfiltersTABLE_name,filters.age as TABLEfiltersTABLE_age,filters.parent_id as TABLEfiltersTABLE_parent_id,filters.content as TABLEfiltersTABLE_content FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.RAND()  ASC  - 1305 FUNCTION goods.RAND does not exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 08-01-2023 15:10:45 - ошибка в SQL запросе: SELECT goods.*,f.name as student_name,f.content,filters.* FROM goods LEFT JOIN goods_filters ON goods.id=goods_filters.teachers LEFT JOIN filters f ON goods_filters.students=f.id LEFT JOIN filters ON f.parent_id=filters.id WHERE goods.id IN ('28','33','34')  ORDER BY goods.id DESC  - 1054 Unknown column 'goods_filters.teachers' in 'on clause'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
