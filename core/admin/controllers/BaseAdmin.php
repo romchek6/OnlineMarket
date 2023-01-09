@@ -342,7 +342,7 @@ abstract class BaseAdmin extends BaseController
 
         $this->createAlias($id);
 
-        $this->updateMenuPosition();
+        $this->updateMenuPosition($id);
 
         $except = $this->checkExceptFields();
 
@@ -361,6 +361,8 @@ abstract class BaseAdmin extends BaseController
             $answerSuccess = $this->messages['editSuccess'];
             $answerFail = $this->messages['editFail'];
         }
+
+        $this->checkManyToMany();
 
         $this->expansion(get_defined_vars());
 
@@ -391,7 +393,7 @@ abstract class BaseAdmin extends BaseController
         if($arr){
             $except = [];
             foreach ($arr as $key =>$item){
-                if(!$this->columns[$key]) $except = $key;
+                if(!$this->columns[$key]) $except[] = $key;
             }
         }
 
@@ -406,7 +408,22 @@ abstract class BaseAdmin extends BaseController
 
     }
 
-    protected function updateMenuPosition(){
+    protected function updateMenuPosition($id = false){
+
+        if(isset($_POST['menu_position'])){
+
+            $where = false;
+
+            if($id && $this->columns['id_row']) $where = [$this->columns['id_row'] => $id];
+
+            if(array_key_exists('parent_id' , $_POST)){
+                $this->model->updateMenuPosition($this->table , 'menu_position' , $where , $_POST['menu_position'] , ['where'=>'parent_id']);
+            }else{
+                $this->model->updateMenuPosition($this->table , 'menu_position' , $where , $_POST['menu_position']);
+
+            }
+
+        }
 
     }
 
@@ -583,7 +600,7 @@ abstract class BaseAdmin extends BaseController
 
                         $res = $this->model->get($mTable , [
                             'fields' =>[$tables[$otherKey] . '_' . $orderData['columns']['id_row']],
-                            'where' => [$this->table . '_' . $this->columns['id_row'] = $this->data[$this->columns['id_row']]]
+                            'where' => [$this->table . '_' . $this->columns['id_row'] => $this->data[$this->columns['id_row']]]
                         ]);
 
                         if($res){
@@ -783,6 +800,206 @@ abstract class BaseAdmin extends BaseController
             }
 
         }
+
+    }
+
+    protected function checkManyToMany($settings = false){
+
+        if(!$settings) $settings = $this->settings ?: Settings::instance();
+
+        $manyToMany = $settings::get('manyToMany');
+
+        if($manyToMany){
+
+            foreach ($manyToMany as $mTable => $tables){
+
+                $targetKey = array_search($this->table , $tables);
+
+                if($targetKey !== false){
+
+                    $otherKey = $targetKey ? 0 : 1;
+
+                    $checkboxlist = $settings::get('templateArr')['checkboxlist'];
+
+                    if(!$checkboxlist || !in_array($tables[$otherKey] , $checkboxlist)) continue;
+
+                    $columns = $this->model->showColumns($tables[$otherKey]);
+
+                    $targetRow = $this->table . '_' . $this->columns['id_row'];
+
+                    $otherRow = $tables[$otherKey] . '_' . $columns['id_row'];
+
+                    $this->model->delete($mTable , [
+                        'where'=>[$targetRow=>$_POST[$this->columns['id_row']]]
+                    ]);
+
+                    if($_POST[$tables[$otherKey]]){
+
+                        $insertArr = [];
+                        $i = 0;
+
+                        foreach ($_POST[$tables[$otherKey]] as $value){
+
+                            foreach ($value as $item){
+
+                                if($item){
+
+                                    $insertArr[$i][$targetRow] = $_POST[$this->columns['id_row']];
+                                    $insertArr[$i][$otherRow] = $item;
+
+                                    $i++;
+
+                                }
+
+                            }
+
+                        }
+
+                        if($insertArr){
+
+                            $this->model->add($mTable,[
+                                'fields' =>$insertArr
+                            ]);
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    protected function createForeignProperty($arr , $rootItems){
+
+        if(in_array($this->table , $rootItems['tables'])){
+            $this->foreignData[$arr['COLUMN_NAME']][0]['id'] = 'NULL';
+            $this->foreignData[$arr['COLUMN_NAME']][0]['name'] = $rootItems['name'];
+        }
+
+        $orderData = $this->createOrderData($arr['REFERENCED_TABLE_NAME']);
+
+
+
+        if($this->data){
+            if($arr['REFERENCED_TABLE_NAME'] === $this->table){
+                $where[$this->columns['id_row']] = $this->data[$this->columns['id_row']];
+                $operand[] = '<>';
+            }
+        }
+        $foreign = $this->model->get($arr['REFERENCED_TABLE_NAME'],[
+            'fields' =>[$arr['REFERENCED_COLUMN_NAME'] . ' as id', $orderData['name'] , $orderData['parent_id']],
+            'where' =>$where,
+            'operand' =>$operand,
+            'order' => $orderData['order']
+        ]);
+
+        if($foreign){
+
+            if($this->foreignData[$arr['COLUMN_NAME']]){
+                foreach ($foreign as $value) {
+                    $this->foreignData[$arr['COLUMN_NAME']][] = $value;
+                }
+            }else{
+                $this->foreignData[$arr['COLUMN_NAME']] = $foreign;
+            }
+
+        }
+
+    }
+
+    protected function createForeignData($settings = false){
+
+        if(!$settings) $settings = Settings::instance();
+
+        $rootItems = $settings::get('rootItems');
+
+        $keys = $this->model->showForeignKeys($this->table);
+
+        if($keys){
+
+            foreach ($keys as $item) {
+
+                $this->createForeignProperty($item , $rootItems);
+
+            }
+
+        }elseif($this->columns['parent_id']){
+
+            $arr['COLUMN_NAME'] = 'parent_id';
+            $arr['REFERENCED_COLUMN_NAME'] = $this->columns['id_row'];
+            $arr['REFERENCED_TABLE_NAME'] = $this->table;
+
+            $this->createForeignProperty($arr , $rootItems);
+
+        }
+
+        return;
+
+    }
+
+    protected function createMenuPosition($settings = false){
+
+        if($this->columns['menu_position']){
+            if(!$settings) $settings = Settings::instance();
+            $rootItems = $settings::get('rootItems');
+
+            if($this->columns['parent_id']){
+
+                if(in_array($this->table , $rootItems['tables'])){
+                    $where = 'parent_id IS NULL OR parent_id = 0';
+                }else{
+
+                    $parent = $this->model->showForeignKeys($this->table, 'parent_id')[0];
+
+                    if($parent){
+
+                        if($this->table === $parent['REFERENCED_TABLE_NAME']){
+                            $where = 'parent_id IS NULL OR parent_id = 0';
+                        }else{
+
+                            $columns = $this->model->showColumns($parent['REFERENCED_TABLE_NAME']);
+
+                            if($columns['parent_id']) $order[] = 'parent_id';
+                            else $order[] = $parent['REFERENCED_COLUMN_NAME'];
+
+                            $id = $this->model->get($parent['REFERENCED_TABLE_NAME'],[
+                                'fields' => [$parent['REFERENCED_COLUMN_NAME']],
+                                'order' => $order,
+                                'limit' => '1'
+                            ])[0][$parent['REFERENCED_COLUMN_NAME']];
+
+                            if($id) $where = ['parent_id' => $id];
+
+                        }
+
+                    }else{
+
+                        $where = 'parent_id IS NULL OR parent_id = 0';
+
+                    }
+
+                }
+
+            }
+
+            $menu_pos = $this->model->get($this->table,[
+                    'fields'=>['COUNT(*) as count'],
+                    'where' =>$where,
+                    'no_concat' =>true
+                ])[0]['count'] + (int)!$this->data;
+
+            for($i = 1 ;$i <= $menu_pos;$i++){
+                $this->foreignData['menu_position'][$i-1]['id'] = $i;
+                $this->foreignData['menu_position'][$i-1]['name'] = $i;
+            }
+
+        }
+
+        return;
 
     }
 

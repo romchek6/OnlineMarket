@@ -194,3 +194,35 @@ Fault: 08-01-2023 15:10:45 - ошибка в SQL запросе: SELECT goods.*,
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 09-01-2023 15:05:48 - ошибка в SQL запросе: INSERT INTO goods (name,visible,menu_position,keywords,filters,content,date,datetime,alias) VALUES ('тест1','1','1','','','',NOW(),NOW(),'test1') - 1054 Unknown column 'filters' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 09-01-2023 15:07:35 - ошибка в SQL запросе: INSERT INTO goods (name,visible,menu_position,keywords,filters,content,date,datetime,alias) VALUES ('тест1','1','1','','','',NOW(),NOW(),'test1') - 1054 Unknown column 'filters' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 09-01-2023 15:08:19 - ошибка в SQL запросе: INSERT INTO goods (name,visible,menu_position,keywords,filters,content,date,datetime,alias) VALUES ('тест1','1','1','','','',NOW(),NOW(),'test1') - 1054 Unknown column 'filters' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 09-01-2023 15:11:43 - ошибка в SQL запросе: INSERT INTO goods (name,visible,menu_position,keywords,filters,content,date,datetime,alias) VALUES ('тест1','1','1','','','',NOW(),NOW(),'test1') - 1054 Unknown column 'filters' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 09-01-2023 15:12:56 - ошибка в SQL запросе: INSERT INTO goods (name,visible,menu_position,keywords,filters,content,date,datetime,alias) VALUES ('тест1','1','1','','','',NOW(),NOW(),'test1') - 1054 Unknown column 'filters' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 09-01-2023 15:20:54 - ошибка в SQL запросе: INSERT INTO goods (name,visible,menu_position,keywords,filters,content,date,datetime,alias) VALUES ('ewqewqeqwe','1','1','','','',NOW(),NOW(),'ewqewqeqwe') - 1054 Unknown column 'filters' in 'field list'
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 09-01-2023 21:46:39 - ошибка в SQL запросе: INSERT INTO filters (name,parent_id,menu_position,content) VALUES ('Height',0,'2','') - 1452 Cannot add or update a child row: a foreign key constraint fails (`onlinestore`.`filters`, CONSTRAINT `filters_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `filters` (`id`))
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 09-01-2023 21:50:22 - ошибка в SQL запросе: INSERT INTO filters (name,parent_id,menu_position,content) VALUES ('Height',0,'2','') - 1452 Cannot add or update a child row: a foreign key constraint fails (`onlinestore`.`filters`, CONSTRAINT `filters_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `filters` (`id`))
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+

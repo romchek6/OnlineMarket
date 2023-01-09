@@ -232,10 +232,13 @@ abstract  class BaseModelMethods
 
                     $where .= $table . $key . ' LIKE ' . "'" . addslashes($item) . "' $condition";
 
-                }else{
+                }else {
 
-                    if(strpos($item , 'SELECT')===0){
+                    if (strpos($item, 'SELECT') === 0) {
                         $where .= $table . $key . ' ' . $operand . ' (' . $item . ') ' . $condition;
+                    }elseif($item === null || $item ==='NULL'){
+                        if($operand === '=') $where .= $table . $key . ' IS NULL ' . $condition;
+                            else $where .= $table . $key . ' IS NOT NULL ' . $condition;
                     }else{
                         $where .= $table . $key . ' ' . $operand . " '" . addslashes($item) . "' " . $condition;
                     }
