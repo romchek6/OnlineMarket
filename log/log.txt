@@ -5958,3 +5958,1047 @@ Fault: 10-01-2023 0:59:25 - Не верное имя файла для подк�
 fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
 In line34
 
+Fault: 10-01-2023 12:42:38 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 12:42:39 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 12:43:11 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 12:45:40 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:04:11 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:04:11 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:04:13 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:04:13 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:04:37 - Не верное имя файла для подключения - core/admin/controllers/DeleteController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:38:32 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:38:34 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:38:34 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:48:50 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:48:50 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:48:51 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:48:51 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:49:13 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:49:13 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:49:13 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:49:15 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:49:15 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:49:16 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:49:16 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:52:16 - Не найдены поля в таблице - filters
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:52:16 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:52:16 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:52:17 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:52:17 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 16:52:18 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 16:52:20 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:35:40 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:35:40 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:35:43 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:36:09 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:36:10 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:36:25 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:36:25 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:36:36 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:36:36 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:36:36 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:37:17 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:37:17 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:37:34 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:37:35 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:37:39 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:37:41 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:37:41 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:38:31 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:38:32 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:38:44 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:38:45 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:38:50 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 17:40:38 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 17:40:38 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:19:25 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:19:26 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:19:27 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:19:28 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:20:00 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:20:00 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:20:01 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:20:04 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:20:04 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:20:06 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:20:06 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:20:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:20:19 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:20:23 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:20:23 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 10-01-2023 19:21:07 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:21:08 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 10-01-2023 19:21:09 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:48:02 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:48:03 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:48:15 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:48:16 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:48:21 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:48:21 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:48:45 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:48:57 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:50:37 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:50:37 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:51:09 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:51:09 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:51:10 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:51:30 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:51:31 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:51:31 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:51:48 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:51:49 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:51:50 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:52:09 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:52:10 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:52:21 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:53:00 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:53:00 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:53:08 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:53:08 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:54:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:54:19 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:54:23 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:54:24 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:56:50 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:56:50 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:56:52 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:56:53 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:56:53 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:07 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:57:07 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:09 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:10 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:57:11 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:13 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:14 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:57:15 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:17 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:57:19 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:20 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 15:57:22 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 15:57:23 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:04:40 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:04:41 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:04:42 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:04:42 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:05:19 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:05:19 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:05:20 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:16:55 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:16:56 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:16:57 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:17:24 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:18:41 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:18:43 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:18:43 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:18:49 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:19:26 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:19:27 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:24:53 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:24:54 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:24:54 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:24:54 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:24:54 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:24:57 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:24:57 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:24:57 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:26:33 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:26:34 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:26:34 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:26:35 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:26:35 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:26:35 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:26:35 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:26:38 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:26:52 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:26:52 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:26:52 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:30:00 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:30:00 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:30:02 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:30:02 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:30:02 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:31:59 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:31:59 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:32:04 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:32:04 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:32:07 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:32:07 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:32:07 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:32:08 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:32:08 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:32:08 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:34:22 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:34:22 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:34:26 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:34:26 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:34:40 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:34:40 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:34:44 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:34:44 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:35:03 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:35:03 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:35:22 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:35:23 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:35:52 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:35:52 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:35:52 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:35:59 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:35:59 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:35:59 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:37:12 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:37:12 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:38:40 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:38:40 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:39:12 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:12 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:39:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:18 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:39:20 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:20 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:20 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:39:22 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:22 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:22 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:39:23 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:23 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:23 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:39:32 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:32 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:39:33 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:51:11 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:51:11 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:51:11 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:51:22 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:51:22 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:51:22 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:52:27 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:27 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:28 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:29 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:29 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:30 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:52:31 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:32 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:33 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:52:35 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:35 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:36 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:52:38 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:38 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:39 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:52:41 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:41 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:42 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:52:44 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:44 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:52:45 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:53:19 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:53:20 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:53:20 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:53:30 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:53:30 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:53:31 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:54:15 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:54:16 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:54:16 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:54:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:54:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:54:19 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:54:21 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:54:21 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:54:22 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:55:18 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:55:19 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:55:29 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:55:30 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:55:31 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+
+Fault: 11-01-2023 16:55:35 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:55:35 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line101
+
+Fault: 11-01-2023 16:55:36 - Не верное имя файла для подключения - core/user/controllers/TemplateController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line34
+

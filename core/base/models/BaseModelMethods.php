@@ -446,7 +446,7 @@ abstract  class BaseModelMethods
 
                if(in_array($value,$this->sqlFunc)){
                    $update.= $value .',';
-               }elseif($value === null){
+               }elseif($value === NULL || $value ==='NULL'){
                    $update .= "NULL" . ",";
                }
                else{

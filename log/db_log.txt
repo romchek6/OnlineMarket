@@ -226,3 +226,7 @@ Fault: 09-01-2023 21:50:22 - ошибка в SQL запросе: INSERT INTO fil
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 11-01-2023 15:48:45 - ошибка в SQL запросе: UPDATE goods SET id='38',name='тест1',visible=0,menu_position='4',keywords='йцуцйуцйewqeqw',content='уцйуйцqweqw',date=NOW(),datetime=NOW(),alias='test1',img='4_580c8c86.jpg',gallery_img='["7f4926a7529963bdea8fb62dbc16dcc8.png","1618475945_16-phonoteka_org-p-fon-dlya-shapki-saita-23.jpg","detail_3bc057ac78da2505584cca03e09df0e0.jpeg","detail_20bb46ea3eeb8e7c41020864885714b2.jpg","detail_65ea5070ceb2824a6f45f4d0ecc72c75.jpg","detail_c3877680cb6f238cbb2cf12f7d92d379.jpg","e2ed298f63143296c27dcc022f477f68.jpeg","grid_lines_metal_aluminium_sieve_tissue_knits_silver-1053136.jpg","kak-pisat-nauchnuyu-statyu.jpg","kartinki_pro_programmista_31_04175255-768x768.jpg","pexels-christina-mor.jpg"]' WHERE id = '38'  - 1406 Data too long for column 'gallery_img' at row 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
