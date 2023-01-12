@@ -23,120 +23,189 @@ function createSitemap(){
 
 }
 
-let files = document.querySelectorAll('input[type=file]')
+createFile()
 
-let fileStore = [];
+function createFile(){
 
-if(files.length){
+    let files = document.querySelectorAll('input[type=file]')
 
-    files.forEach(item=>{
+    let fileStore = [];
 
-        item.onchange = function (){
+    if(files.length){
 
-            let multiple = false;
+        files.forEach(item=>{
 
-            let parentContainer
+            item.onchange = function (){
 
-            let container
+                let multiple = false;
 
-            if(item.hasAttribute('multiple')){
+                let parentContainer
 
-                multiple = true
+                let container
 
-                parentContainer = this.closest('.gallery_container')
+                if(item.hasAttribute('multiple')){
 
-                if(!parentContainer) return false;
+                    multiple = true
 
-                container = parentContainer.querySelectorAll('.empty_container')
+                    parentContainer = this.closest('.gallery_container')
 
-                if(container.length < this.files.length){
-
-                    for(let index = 0;index < this.files.length - container.length; index++){
-
-                        let el = document.createElement('div')
-
-                        el.classList.add('vg-dotted-square', 'vg-center', 'empty_container')
-
-                        parentContainer.append(el)
-
-                    }
+                    if(!parentContainer) return false;
 
                     container = parentContainer.querySelectorAll('.empty_container')
 
-                }
+                    if(container.length < this.files.length){
 
-            }
+                        for(let index = 0;index < this.files.length - container.length; index++){
 
-            let fileName = item.name
+                            let el = document.createElement('div')
 
-            let attributeName = fileName.replace(/[\[\]]/g, '')
+                            el.classList.add('vg-dotted-square', 'vg-center', 'empty_container')
 
-            for(let i in this.files){
+                            parentContainer.append(el)
 
-                if(this.files.hasOwnProperty(i)){
-
-                    if(multiple){
-
-                        if(typeof fileStore[fileName] === 'undefined'){
-                            fileStore[fileName] = []
                         }
 
-                        let elId = fileStore[fileName].push(this.files[i]) - 1
-
-                        container[i].setAttribute(`data-deleteFileId-${attributeName}`, elId)
-
-                        showImage(this.files[i] , container[i])
-
-                        deleteNewFiles(elId, fileName, attributeName, container[i])
-
-                    }else{
-
-                        container = this.closest('.img_container').querySelector('.img_show')
-
-                        showImage(this.files[i] , container)
+                        container = parentContainer.querySelectorAll('.empty_container')
 
                     }
 
                 }
 
+                let fileName = item.name
+
+                let attributeName = fileName.replace(/[\[\]]/g, '')
+
+                for(let i in this.files){
+
+                    if(this.files.hasOwnProperty(i)){
+
+                        if(multiple){
+
+                            if(typeof fileStore[fileName] === 'undefined'){
+                                fileStore[fileName] = []
+                            }
+
+                            let elId = fileStore[fileName].push(this.files[i]) - 1
+
+                            container[i].setAttribute(`data-deleteFileId-${attributeName}`, elId)
+
+                            showImage(this.files[i] , container[i])
+
+                            deleteNewFiles(elId, fileName, attributeName, container[i])
+
+                        }else{
+
+                            container = this.closest('.img_container').querySelector('.img_show')
+
+                            showImage(this.files[i] , container)
+
+                        }
+
+                    }
+
+                }
+
+                console.log(fileStore)
+
             }
-
-            console.log(fileStore)
-
-        }
-
-    })
-
-    function deleteNewFiles(elId, fileName, attributeName, container){
-
-        container.addEventListener('click' , function (){
-
-            this.remove()
-
-            delete fileStore[fileName][elId]
 
         })
 
-    }
+        let form = document.querySelector('#main-form')
 
-    function showImage(item , container){
+        if(form){
 
-        let reader = new FileReader()
+            form.onsubmit = function (e){
 
-        container.innerHTML = ''
+                if(!isEmpty(fileStore)){
 
-        reader.readAsDataURL(item)
+                    e.preventDefault()
 
-        reader.onload = e => {
+                    let formData = new FormData(this)
 
-            container.innerHTML = '<img class="img_item" src="">'
+                    for(let i in fileStore){
 
-            container.querySelector('img').setAttribute('src' , e.target.result)
+                        if(fileStore.hasOwnProperty(i)){
 
-            container.classList.remove('empty_container')
+                            formData.delete(i)
+
+                            let rowName = i.replace(/[\[\]]/g , '')
+
+                            fileStore[i].forEach((item , index) =>{
+
+                                formData.append(`${rowName}[${index}]` , item)
+
+                            })
+
+                        }
+
+                    }
+
+                    formData.append('ajax' , 'editData')
+
+                    Ajax({
+                        url:this.getAttribute('action'),
+                        type: 'post',
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    }).then(res => {
+
+                        try{
+
+                            res = JSON.parse(res)
+
+                            if(!res.success) throw new Error()
+
+                            location.reload()
+
+                        }catch (e){
+
+                            alert('Произошла внутренняя ошибка')
+
+                        }
+
+                    })
+
+                }
+
+            }
+
+        }
+
+        function deleteNewFiles(elId, fileName, attributeName, container){
+
+            container.addEventListener('click' , function (){
+
+                this.remove()
+
+                delete fileStore[fileName][elId]
+
+            })
+
+        }
+
+        function showImage(item , container){
+
+            let reader = new FileReader()
+
+            container.innerHTML = ''
+
+            reader.readAsDataURL(item)
+
+            reader.onload = e => {
+
+                container.innerHTML = '<img class="img_item" src="">'
+
+                container.querySelector('img').setAttribute('src' , e.target.result)
+
+                container.classList.remove('empty_container')
+
+            }
 
         }
 
     }
 
 }
+
