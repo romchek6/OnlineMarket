@@ -1013,7 +1013,7 @@ abstract class BaseAdmin extends BaseController
 
             $menu_pos = $this->model->get($this->table,[
                     'fields'=>['COUNT(*) as count'],
-                    'where' =>$where,
+                    'where' => $where,
                     'no_concat' =>true
                 ])[0]['count'] + (int)!$this->data;
 

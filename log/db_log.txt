@@ -230,3 +230,51 @@ Fault: 11-01-2023 15:48:45 - ошибка в SQL запросе: UPDATE goods SE
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 13-01-2023 16:35:34 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:40:36 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:42:37 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:44:22 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:45:33 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:47:40 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:47:46 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:55:12 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:56:05 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:57:38 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:59:03 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 13-01-2023 16:59:22 - ошибка в SQL запросе: SELECT COUNT (*) as count FROM articles  WHERE parent_id IS NULL    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE parent_id IS NULL' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+

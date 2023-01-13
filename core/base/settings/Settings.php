@@ -50,11 +50,10 @@ class Settings
     private $formTemplates = PATH . 'core/admin/views/include/form_templates/';
 
     private $projectTables = [
-        'articles'=>[],
+        'articles'=>['name'=> 'Статьи'],
         'filters'=>['name'=>'Фильтры'],
-        'goods' =>['name'=>'Товары','img'=>'pages.png'],
-        'pages' =>[]
-
+        'goods' =>['name'=>'Товары'],
+        'pages' =>['name'=>'Страницы']
     ];
 
     private $templateArr = [
@@ -86,7 +85,7 @@ class Settings
 
     private $rootItems = [
         'name'=>'Корневая',
-        'tables'=>['goods' , 'filters']
+        'tables'=>['goods' , 'filters' , 'articles']
     ];
 
     private $manyToMany =[

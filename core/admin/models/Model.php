@@ -45,7 +45,7 @@ class Model extends BaseModel
                 if($old_data[$update_rows['where']] !== $_POST[$update_rows['where']]){
 
                     $pos = $this->get($table, [
-                        'fields' => ['COUNT (*) as count'],
+                        'fields' => ['COUNT(*) as count'],
                         'where' =>[$update_rows['where'] => $old_data[$update_rows['where']]],
                         'no_concat' => true
                     ])[0]['count'];
