@@ -89,7 +89,11 @@ function createFile(){
 
                             container[i].setAttribute(`data-deleteFileId-${attributeName}`, elId)
 
-                            showImage(this.files[i] , container[i])
+                            showImage(this.files[i] , container[i] , function (){
+
+                                parentContainer.sortable({excludedElements: 'label .empty_container'})
+
+                            })
 
                             deleteNewFiles(elId, fileName, attributeName, container[i])
 
@@ -121,7 +125,9 @@ function createFile(){
 
         if(form){
 
-            form.onsubmit = function (e){
+            form.onsubmit = function(e){
+
+                createJsSortable(form)
 
                 if(!isEmpty(fileStore)){
 
@@ -191,7 +197,7 @@ function createFile(){
 
         }
 
-        function showImage(item , container){
+        function showImage(item , container , callback){
 
             let reader = new FileReader()
 
@@ -206,6 +212,8 @@ function createFile(){
                 container.querySelector('img').setAttribute('src' , e.target.result)
 
                 container.classList.remove('empty_container')
+
+                callback && callback()
 
             }
 
@@ -355,6 +363,233 @@ function blockParameters(){
             }
 
         })
+
+    }
+
+}
+
+showHideMenuSearch()
+
+function showHideMenuSearch(){
+
+    document.querySelector('#hideButton').addEventListener('click' , ()=>{
+
+        document.querySelector('.vg-carcass').classList.toggle('vg-hide')
+
+    })
+
+    let searchButton = document.querySelector('#searchButton')
+
+    let searchInput = searchButton.querySelector('input[type=text]')
+
+    searchButton.addEventListener('click' , ()=>{
+
+        searchButton.classList.add('vg-search-reverse')
+
+         searchInput.focus()
+
+    })
+
+    searchInput.addEventListener('blur' , ()=>{
+
+        searchButton.classList.remove('vg-search-reverse')
+
+    })
+
+}
+
+let searchResultHover = (() =>{
+
+    let searchRes = document.querySelector('.search_res')
+
+    let searchInput = document.querySelector('#searchButton input[type=text]')
+
+    let defaultInputValue = null
+
+    function searchKeyDown(e){
+
+        if(!(document.querySelector('#searchButton').classList.contains('vg-search-reverse')) ||
+            (e.key !=='ArrowUp' && e.key !== 'ArrowDown')) return;
+
+        let children = [...searchRes.children]
+
+        if(children.length){
+
+            e.preventDefault()
+
+            let activeItem = searchRes.querySelector('.search_act')
+
+            let activeIndex = activeItem ? children.indexOf(activeItem) : -1;
+
+            if(e.key ==='ArrowUp')
+                activeIndex = activeIndex<= 0 ? children.length - 1 : --activeIndex
+            else
+                activeIndex = activeIndex ===children.length - 1 ? 0: ++activeIndex
+
+            children.forEach(item => item.classList.remove('search_act'))
+
+            children[activeIndex].classList.add('search_act')
+
+            searchInput.value = children[activeIndex].innerText
+
+        }
+
+    }
+
+    function setDefaultValue(){
+
+        searchInput.value = defaultInputValue
+
+    }
+
+    searchRes.addEventListener('mouseleave' , setDefaultValue)
+
+    window.addEventListener('keydown' , searchKeyDown)
+
+    return () => {
+
+        defaultInputValue = searchInput.value
+
+        if(searchRes.children.length){
+
+            let children = [...searchRes.children]
+
+            children.forEach(item=>{
+
+                item.addEventListener('mouseover', () => {
+
+                    children.forEach(el => el.classList.remove('search_act'))
+
+                    item.classList.add('search_act')
+
+                    searchInput.value = item.innerText
+
+                })
+
+            })
+
+        }
+
+    }
+
+})()
+
+searchResultHover()
+
+search()
+
+function search(){
+
+    let searchInput = document.querySelector('input[name=search]')
+
+    if(searchInput){
+
+        searchInput.oninput = () =>{
+
+            if(searchInput.value.length > 1){
+
+                Ajax(
+                    {
+                        data:{
+                            data:searchInput.value,
+                            table:document.querySelector('input[name="search_table"]').value,
+                            ajax: 'search'
+                        }
+                    }
+                ).then(res =>{
+                    console.log(res)
+                })
+
+            }
+
+        }
+
+    }
+
+}
+
+let galleries = document.querySelectorAll('.gallery_container')
+
+if(galleries.length){
+
+    galleries.forEach(item =>{
+
+        item.sortable({
+            excludedElements: 'label .empty_container',
+            stop: function (dragEl){
+
+
+
+            }
+        })
+
+    })
+
+}
+
+document.querySelector('.vg-rows > div').sortable()
+
+function createJsSortable(form){
+
+    if(form){
+
+        let sortable = form.querySelectorAll('input[type=file][multiple]')
+
+        if(sortable.length){
+
+            sortable.forEach(item =>{
+
+                let container = item.closest('.gallery_container')
+
+                let name = item.getAttribute('name')
+
+                if(name && container){
+
+                    name = name.replace(/\[\]/g, '')
+
+                    let inputSorting = form.querySelector(`input[name="js-sorting[${name}]"]`)
+
+                    if(!inputSorting){
+
+                        inputSorting = document.createElement('input')
+
+                        inputSorting.name = `js-sorting[${name}]`
+
+                        form.append(inputSorting)
+
+                    }
+
+                    let res = []
+
+                    for (let i in container.children){
+
+                        if(container.children.hasOwnProperty(i)){
+
+                            if(!container.children[i].matches('label') && !container.children[i].matches('.empty_container')){
+
+                                if(container.children[i].tagName === 'A'){
+
+                                    res.push(container.children[i].querySelector('img').getAttribute('src'))
+
+                                }else{
+
+                                    res.push(container.children[i].getAttribute(`data-deletefileid-${name}`))
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                    inputSorting.value = JSON.stringify(res)
+
+                }
+
+            })
+
+        }
 
     }
 

@@ -9,7 +9,7 @@
 
     <?php $this->getStyles() ?>
 
-    <link rel="stylesheet" href="/template/admin/css/jquery.Jcrop.min.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
 <div class="vg-carcass vg-hide">
@@ -34,7 +34,11 @@
                     </div>
                     <form method="post" action="<?=PATH. \core\base\settings\Settings::get('routes')['admin']['alias']?>/search" autocomplete="off">
                         <input type="text" name="search" class="vg-input vg-text">
-                        <div class="vg-element vg-firm-background-color4 vg-box-shadow search_links search_res"></div>
+                        <input type="hidden" name = "search_table" value="<?=$this->table?>">
+                        <div class="vg-element vg-firm-background-color4 vg-box-shadow search_links search_res">
+                            <a href="">LINk-1</a><a href="">LINk-2</a><a href="">LINk-3</a><a href="">LINk-4</a><a
+                                    href="">LINk-5</a>
+                        </div>
                     </form>
                 </div>
             </div>

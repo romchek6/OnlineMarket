@@ -37,12 +37,27 @@ class AjaxController extends BaseAdmin
 
                     break;
 
+                case 'search' :
+
+                    return $this->search();
+
+                    break;
 
             }
 
         }
 
         return json_encode(['success' => '0' , 'message'=>'No ajax variable']);
+
+    }
+
+    protected function search(){
+
+        $data = $this->clearStr($this->ajaxData['data']);
+
+        $table = $this->clearStr($this->ajaxData['table']);
+
+        return $this->model->search($data, $table, 20);
 
     }
 

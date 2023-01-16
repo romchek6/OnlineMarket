@@ -93,8 +93,8 @@ class Settings
     ];
 
     private $blockNeedle = [
-        'vg-rows'=>[],
-        'vg-img'=>['main_img','img','gallery_img'],
+        'vg-rows'=>['gallery_img'],
+        'vg-img'=>['main_img','img'],
         'vg-content'=>['content']
     ];
 
