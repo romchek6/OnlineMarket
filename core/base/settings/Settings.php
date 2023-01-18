@@ -53,7 +53,8 @@ class Settings
         'articles'=>['name'=> 'Статьи'],
         'filters'=>['name'=>'Фильтры'],
         'goods' =>['name'=>'Товары'],
-        'pages' =>['name'=>'Страницы']
+        'pages' =>['name'=>'Страницы'],
+
     ];
 
     private $templateArr = [
@@ -70,7 +71,7 @@ class Settings
 
     private $translate = [
         'name'=>['Название', 'Не более 100 символов'],
-        'content'=>['Описание', 'Не более 200 символов'],
+        'content'=>['Описание'],
         'gallery_img'=>['Галерея изображений', 'Не более 20 изображений'],
         'img'=>['Главное изображение','image/*,image/jpeg,image/png,image/gif'],
         'menu_position'=>['Позиция в меню'],
@@ -103,7 +104,7 @@ class Settings
         'price' =>['int'=>true],
         'login' =>['empty' => true, 'trim'=>true],
         'password' => ['crypt' => true],
-        'content' => ['count'=>200,'trim'=>true],
+        'content' => ['trim'=>true],
         'keywords' =>['count'=>70,'trim'=>true],
         'description' => ['count' =>160 , 'trim'=> true],
     ];

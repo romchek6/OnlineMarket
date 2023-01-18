@@ -3,7 +3,9 @@
 namespace core\admin\models;
 
 use core\base\controllers\Singleton;
+use core\base\exceptions\RouteException;
 use core\base\models\BaseModel;
+use core\base\settings\Settings;
 
 class Model extends BaseModel
 {
@@ -134,6 +136,8 @@ class Model extends BaseModel
 
        $searchArr = [];
 
+       $order =[];
+
        for(;;){
 
            if(!$arr) break;
@@ -144,7 +148,138 @@ class Model extends BaseModel
 
        }
 
-       $a = 1;
+       $correctCurrentTable = false;
+
+       $projectTables = Settings::get('projectTables');
+
+       if(!$projectTables) throw new RouteException('Ошибка поиска нет разделов в админ панели');
+
+       foreach ($projectTables as $table => $item){
+
+           if(!in_array($table , $dbTables)) continue;
+
+           $searchRows = [];
+
+           $orderRows = ['name'];
+
+           $fields = [];
+
+           $columns = $this->showColumns($table);
+
+           $fields[] = $columns['id_row'] . ' as id ';
+
+           $fieldName = isset($columns['name']) ? " CASE WHEN name <> '' THEN name " : '';
+
+           foreach ($columns as $col => $value){
+
+               if($col !== 'name' && stripos($col , 'name') !== false){
+
+                   if(!$fieldName) $fieldName = ' CASE ';
+
+                   $fieldName .= " WHEN $col <> '' THEN $col ";
+
+               }
+
+               if(isset($value['Type']) && (stripos($value['Type'] , 'char') !== false || stripos($value['Type'] , 'text') !== false)){
+
+                    $searchRows[] = $col;
+
+               }
+
+           }
+
+           if($fieldName) $fields[] = $fieldName . ' END as name';
+           else $fields[] = $columns['id_row'] . ' as name';
+
+           $fields[] = "('$table') AS table_name";
+
+           $res = $this->createWhereOrder($searchRows , $searchArr, $orderRows , $table);
+
+           $where = $res['where'];
+
+           !$order &&  $order = $res['order'];
+
+           if($table === $currentTable){
+
+               $correctCurrentTable = true;
+
+               $fields[] = "('current_table') AS current_table";
+
+           }
+
+           if($where){
+
+//               $this->buildUnion();
+
+           }
+
+       }
+
+       $orderDirection = '';
+
+       if($order){
+
+           $order = ($correctCurrentTable ? 'current_table DESC, ' : '') . '(' . implode('+' , $order) . ')';
+
+           $orderDirection = 'DESC';
+
+       }
+
+    }
+
+    protected function createWhereOrder($searchRows , $searchArr, $orderRows , $table){
+
+        $where = '';
+
+        $order = [];
+
+        if($searchRows && $searchArr){
+
+            $columns = $this->showColumns($table);
+
+            if($columns){
+
+                $where = '(';
+
+                foreach ($searchRows as $row){
+
+                    $where .= '(';
+
+                    foreach ($searchArr as $item){
+
+                        if(in_array($row , $orderRows)){
+
+                            $str = "($row LIKE '%$item%')";
+
+                            if(!in_array($str , $order)){
+
+                                $order[] = $str;
+
+                            }
+
+                        }
+
+                        if(isset($columns[$row])){
+
+                            $where .= "$row LIKE '%$item%' OR ";
+
+                        }
+
+                    }
+
+                    $where = preg_replace('/\)?\s*or\s*\(?$/i' , '' , $where) . ' ) OR ';
+
+                }
+
+                $where && $where = preg_replace('/\s*or\s*$/i' , '', $where) . ')';
+
+                $a = 1;
+
+            }
+
+        }
+
+        return compact('where' , 'order');
 
     }
 
