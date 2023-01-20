@@ -166,17 +166,17 @@ class Model extends BaseModel
 
            $columns = $this->showColumns($table);
 
-           $fields[] = $columns['id_row'] . ' as id ';
+           $fields[] = $columns['id_row'] . ' as id';
 
-           $fieldName = isset($columns['name']) ? " CASE WHEN name <> '' THEN name " : '';
+           $fieldName = isset($columns['name']) ? "CASE WHEN {$table}.name <> '' THEN {$table}.name " : '';
 
            foreach ($columns as $col => $value){
 
                if($col !== 'name' && stripos($col , 'name') !== false){
 
-                   if(!$fieldName) $fieldName = ' CASE ';
+                   if(!$fieldName) $fieldName = 'CASE ';
 
-                   $fieldName .= " WHEN $col <> '' THEN $col ";
+                   $fieldName .= "WHEN {$table}.$col <> '' THEN {$table}.$col ";
 
                }
 
@@ -188,8 +188,8 @@ class Model extends BaseModel
 
            }
 
-           if($fieldName) $fields[] = $fieldName . ' END as name';
-           else $fields[] = $columns['id_row'] . ' as name';
+           if($fieldName) $fields[] = $fieldName . 'END as name';
+           else $fields[] = $columns['id_row'] . '  as name';
 
            $fields[] = "('$table') AS table_name";
 
@@ -209,7 +209,11 @@ class Model extends BaseModel
 
            if($where){
 
-//               $this->buildUnion();
+               $this->buildUnion($table , [
+                   'fields' => $fields,
+                   'where' => $where,
+                   'no_concat' => true
+               ]);
 
            }
 
@@ -224,6 +228,28 @@ class Model extends BaseModel
            $orderDirection = 'DESC';
 
        }
+
+       $result = $this->getUnion([
+//           'type' => 'all',
+//           'pagination' => [],
+//           'limit' => 3,
+           'order' => $order,
+           'order_direction' => $orderDirection
+       ]);
+
+       if ($result){
+
+           foreach ($result as $index => $item){
+
+               $result[$index]['name'] .= '(' . (isset($projectTables[$item['table_name']]['name']) ? $projectTables[$item['table_name']]['name'] : $item['table_name'] ) . ')';
+
+               $result[$index]['alias'] = PATH . Settings::get('routes')['admin']['alias'] . '/edit/' .$item['table_name'] .'/' . $item['id'];
+
+           }
+
+       }
+
+       return $result?:[];
 
     }
 
@@ -261,7 +287,7 @@ class Model extends BaseModel
 
                         if(isset($columns[$row])){
 
-                            $where .= "$row LIKE '%$item%' OR ";
+                            $where .= "{$table}.$row LIKE '%$item%' OR ";
 
                         }
 

@@ -13,13 +13,13 @@ class ShowController extends BaseAdmin
 
         $this->createTableData();
 
-        $this->createDate();
+        $this->createData();
 
         return $this->expansion();
 
     }
 
-    protected function createDate($arr = []){
+    protected function createData($arr = []){
 
         $fields = [];
         $order = [];

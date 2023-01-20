@@ -37,6 +37,8 @@ abstract class BaseAdmin extends BaseController
     protected $formTemplates;
     protected $noDelete;
 
+    protected $search;
+
     protected function inputData(){
 
         if(!MS_MODE){

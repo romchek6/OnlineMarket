@@ -50,11 +50,8 @@ class Settings
     private $formTemplates = PATH . 'core/admin/views/include/form_templates/';
 
     private $projectTables = [
-        'articles'=>['name'=> 'Статьи'],
         'filters'=>['name'=>'Фильтры'],
-        'goods' =>['name'=>'Товары'],
-        'pages' =>['name'=>'Страницы'],
-
+        'goods' =>['name'=>'Товары']
     ];
 
     private $templateArr = [
