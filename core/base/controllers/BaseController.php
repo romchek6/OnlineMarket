@@ -3,6 +3,7 @@
 namespace core\base\controllers;
 
 use core\base\exceptions\RouteException;
+use core\base\models\UserModel;
 use core\base\settings\Settings;
 
 abstract class BaseController
@@ -113,19 +114,35 @@ abstract class BaseController
 
         if(!$admin){
             if (USER_CSS_JS['styles']){
-                foreach (USER_CSS_JS['styles'] as $style) $this->styles[] = PATH .TEMPLATE.trim($style, '/');
+                foreach (USER_CSS_JS['styles'] as $style)
+                    $this->styles[] = (!preg_match('/^\s*https?:\/\//i' , $style) ? PATH .TEMPLATE : '') .trim($style, '/');
             }
             if (USER_CSS_JS['scripts']){
-                foreach (USER_CSS_JS['scripts'] as $script) $this->scripts[] = PATH .TEMPLATE.trim($script, '/');
+                foreach (USER_CSS_JS['scripts'] as $script)
+                    $this->scripts[] = (!preg_match('/^\s*https?:\/\//i' , $script) ? PATH .TEMPLATE : '') .trim($script, '/');
             }
         }else{
             if (ADMIN_CSS_JS['styles']){
-                foreach (ADMIN_CSS_JS['styles'] as $style) $this->styles[] = PATH . ADMIN_TEMPLATE .trim($style, '/');
+                foreach (ADMIN_CSS_JS['styles'] as $style)
+                    $this->styles[] = (!preg_match('/^\s*https?:\/\//i' , $style) ? PATH . ADMIN_TEMPLATE : '') .trim($style, '/');
             }
             if (ADMIN_CSS_JS['scripts']){
-                foreach (ADMIN_CSS_JS['scripts'] as $script) $this->scripts[] = PATH . ADMIN_TEMPLATE .trim($script, '/');
+                foreach (ADMIN_CSS_JS['scripts'] as $script)
+                    $this->scripts[] = (!preg_match('/^\s*https?:\/\//i' , $script) ? PATH .ADMIN_TEMPLATE : '') .trim($script, '/');
             }
         }
+
+    }
+
+    protected function checkAuth($type = false){
+
+        if(!($this->userId = UserModel::instance()->checkUser(false , $type))){
+
+            $type && $this->redirect(PATH);
+
+        }
+
+        if(property_exists($this , 'userModel')) $this->userModel = UserModel::instance();
 
     }
 

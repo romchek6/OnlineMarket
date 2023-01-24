@@ -15,6 +15,12 @@ class BaseAjax extends BaseController
 
         $data = $this->isPost() ? $_POST : $_GET;
 
+        if(!empty($data['ajax']) && $data['ajax'] === 'token'){
+
+            return $this->generateToken();
+
+        }
+
         $httpReferer = str_replace('/' , '\/', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . PATH . $route['admin']['alias']);
 
         if(isset($data['ADMIN_MODE']) || preg_match('/^' . $httpReferer . '(\/?|$)/' , $_SERVER['HTTP_REFERER'])){
@@ -37,6 +43,12 @@ class BaseAjax extends BaseController
         elseif (is_int($res)) $res = (float)$res;
 
         return $res;
+
+    }
+
+    protected function generateToken(){
+
+        return $_SESSION['token'] = md5(mt_rand(0,999999) . microtime());
 
     }
 
