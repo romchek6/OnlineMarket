@@ -14,6 +14,7 @@ const CRYPT_KEY = '%D*G-KaPdSgVkYp3x!A%C*F-JaNdRgUk4t7w!z%C&F)J@NcRmYq3t6w9z$B&E
 const COOKIE_TIME = 60;
 const BLOCK_TIME = 3;
 
+const END_SLASH = '/';
 const QTY = 8;
 const QTY_LINKS = 3;
 
@@ -34,7 +35,7 @@ const USER_CSS_JS = [
     ],
     'scripts' => [
         'https://unpkg.com/swiper/swiper-bundle.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js',
+        'https://code.jquery.com/jquery-3.6.3.js',
         'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.5/gsap.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/gsap.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js',

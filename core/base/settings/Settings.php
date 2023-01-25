@@ -50,14 +50,18 @@ class Settings
     private $formTemplates = PATH . 'core/admin/views/include/form_templates/';
 
     private $projectTables = [
+        'catalog' =>['name' =>'Каталог'],
         'filters'=>['name'=>'Фильтры'],
-        'goods' =>['name'=>'Товары']
+        'goods' =>['name'=>'Товары'],
+        'information' =>['name' =>'Информация'],
+        'socials' =>['name' =>'Социальные сети'],
+        'settings'=>['name' => 'Настройки системы'],
     ];
 
     private $templateArr = [
-        'text' =>['name'],
-        'textarea' =>['content','keywords','description'],
-        'radio'=>['visible'],
+        'text' =>['name' , 'phone' , 'email' , 'alias' , 'external_alias'],
+        'textarea' =>['content','keywords','description', 'address'],
+        'radio'=>['visible', 'show_top_menu'],
         'checkboxlist'=>['filters'],
         'select'=>['menu_position' ,'parent_id'],
         'img' =>['img', 'main_img'],
@@ -74,16 +78,24 @@ class Settings
         'menu_position'=>['Позиция в меню'],
         'parent_id'=>['Категории'],
         'visible' =>['Видимость','Отоброжение на сайте'],
-        'keywords' =>['Ключевые слова','Не более 70 символов']
+        'keywords' =>['Ключевые слова','Не более 400 символов'],
+        'description' =>['SEO Описание' , 'Не более 400 символов'],
+        'email' =>['Email'],
+        'phone' =>['Телефон'],
+        'address' => ['Адрес'],
+        'alias' =>['Ссылка ЧПУ'],
+        'show_top_menu' =>['Показывать в верхнем меню'],
+        'external_alias' =>['Внешняя ссылка']
     ];
 
     private $radio = [
-        'visible'=>['Нет','Да','default'=>'Да']
+        'visible'=>['Нет','Да','default'=>'Да'],
+        'show_top_menu'=>['Нет','Да','default'=>'Да']
     ];
 
     private $rootItems = [
         'name'=>'Корневая',
-        'tables'=>['goods' , 'filters' , 'articles']
+        'tables'=>['goods' , 'filters' , 'articles', 'catalog']
     ];
 
     private $manyToMany =[

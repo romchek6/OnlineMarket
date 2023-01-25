@@ -15,12 +15,6 @@ class IndexController extends BaseUser{
 
         parent::inputData();
 
-        $res = $this->img();
-
-        $a = 1;
-
     }
-
-
 
 }
