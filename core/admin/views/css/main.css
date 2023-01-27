@@ -81,6 +81,10 @@ label.vg-element {
     flex-wrap: wrap;
 }
 
+.hover:hover{
+    background: lightgray;
+}
+
 .vg-wrap-size {
     flex-basis: 79.3%;
 }
@@ -487,9 +491,13 @@ textarea {
     flex-basis: 100%;
 }
 
-.img_show {
+.img_show{
     display: block;
     height: 300px;
+}
+
+.img_show{
+    min-width: 50px;
 }
 
 .mce-tinymce.mce-container.mce-panel , .tox-tinymce {

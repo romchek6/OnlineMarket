@@ -1,183 +1,86 @@
+<?php if(!empty($sales)): ?>
 <section class="slider">
     <div class="slider__container swiper-container">
 
         <div class="slider__wrapper swiper-wrapper">
-            <div class="slider__item swiper-slide">
-                <div class="slider__item-description">
-                    <div class="slider__item-prev-text">Продажа</div>
-                    <div class="slider__item-header"><span>Интернет-магазин</span>
-                        <span>Автозапчастей</span></div>
-                    <div class="slider__item-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Ut quisquam eos rem quod ratione. Quam odit dolor, aperiam labore neque quis adipisci dicta non, rem recusandae tempore quia id quas voluptates ea vel atque doloribus explicabo maxime velit harum, accusantium.
-                    </div>
-                    <div class="slider__item-logos">
-                        <div class="slider__item-15yrs">
-                            <img src="assets/img/slider/15.svg" alt="">
-                            <p><span>Лет</span>на рынке</p>
+            <?php foreach ($sales as $item):?>
+                <a href="<?= $this->alias($item['external_alias']) ?>" class="slider__item swiper-slide" style="text-decoration: none">
+                    <div class="slider__item-description">
+                        <div class="slider__item-prev-text"><?= $item['sub_title'] ?></div>
+                        <div class="slider__item-header">
+                            <?php foreach (preg_split('/\s+/' , $item['name'] , 0, PREG_SPLIT_NO_EMPTY) as $value): ?>
+                            <span><?= $value?></span>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="slider__item-text">
+                           <?= $this->clearStr($item['short_content']) ?>
+                        </div>
+                        <div class="slider__item-logos">
+                            <?php if(!empty($this->set['img_years']) && !empty($this->set['number_of_years'])): ?>
+                            <div class="slider__item-15yrs">
+                                <img src="<?= $this->img($this->set['img_years']) ?>" alt="">
+                                <p><span><?= $this->wordsForCounter($this->set['number_of_years'])?></span>на рынке</p>
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
-                </div>
-                <div class="slider__item-image">
-                    <img src="assets/img/slider/slide1.png" alt="">
-                </div>
-            </div>
+                    <div class="slider__item-image">
+                        <img src="<?=$this->img($item['img'])?>" alt="">
+                    </div>
+                </a>
+            <?php endforeach; ?>
 
-            <div class="slider__item swiper-slide">
-                <div class="slider__item-description">
-                    <div class="slider__item-prev-text">Продажа</div>
-                    <div class="slider__item-header"><span>Интернет-магазин</span>
-                        <span>Автозапчастей</span></div>
-                    <div class="slider__item-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Ut quisquam eos rem quod ratione. Quam odit dolor, aperiam labore neque quis adipisci dicta non, rem recusandae tempore quia id quas voluptates ea vel atque doloribus explicabo maxime velit harum, accusantium.
-                    </div>
-                    <div class="slider__item-logos">
-                        <div class="slider__item-15yrs">
-                            <img src="assets/img/slider/15.svg" alt="">
-                            <p><span>Лет</span>на рынке</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider__item-image">
-                    <img src="assets/img/slider/slide1.png" alt="">
-                </div>
-            </div>
-
-            <div class="slider__item swiper-slide">
-                <div class="slider__item-description">
-                    <div class="slider__item-prev-text">Продажа</div>
-                    <div class="slider__item-header"><span>Интернет-магазин</span>
-                        <span>Автозапчастей</span></div>
-                    <div class="slider__item-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Ut quisquam eos rem quod ratione. Quam odit dolor, aperiam labore neque quis adipisci dicta non, rem recusandae tempore quia id quas voluptates ea vel atque doloribus explicabo maxime velit harum, accusantium.
-                    </div>
-                    <div class="slider__item-logos">
-                        <div class="slider__item-15yrs">
-                            <img src="assets/img/slider/15.svg" alt="">
-                            <p><span>Лет</span>на рынке</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider__item-image">
-                    <img src="assets/img/slider/slide1.png" alt="">
-                </div>
-            </div>
         </div>
 
         <div class="slider__pagination swiper-pagination"></div>
         <div class="slider__controls controls _prev swiper-button-prev">
             <svg>
-                <use xlink:href="assets/img/icons.svg#arrow"></use>
+                <use xlink:href="<?= PATH.TEMPLATE ?>assets/img/icons.svg#arrow"></use>
             </svg>
         </div>
         <div class="slider__controls controls _next swiper-button-next">
             <svg>
-                <use xlink:href="assets/img/icons.svg#arrow"></use>
+                <use xlink:href="<?= PATH.TEMPLATE ?>assets/img/icons.svg#arrow"></use>
             </svg>
         </div>
 </section>
+<?php endif; ?>
 
-<section class="catalog">
-    <div class="division-internal__items">
+<?php if(!empty($this->menu['catalog'])): ?>
+    <section class="catalog">
+        <div class="division-internal__items">
 
-        <a href="division-internal.html#" class="division-internal-item">
-          <span class="division-internal-item__title">
-            Запчасти
-          </span>
-            <span class="division-internal-item__arrow-stat">
-            <svg>
-              <use xlink:href="assets/img/icons.svg#arrow-right"></use>
-            </svg>
-          </span>
-            <span class="division-internal-item__arrow">
-            <img src="assets/img/divisions/devision-arrow.png" alt="">
-          </span>
-        </a>
-
-        <a href="division-internal.html#" class="division-internal-item">
-          <span class="division-internal-item__title">
-            Аккумуляторы и принадлежности
-          </span>
-            <span class="division-internal-item__arrow-stat">
-            <svg>
-              <use xlink:href="assets/img/icons.svg#arrow-right"></use>
-            </svg>
-          </span>
-            <span class="division-internal-item__arrow">
-            <img src="assets/img/divisions/devision-arrow.png" alt="">
-          </span>
-        </a>
-
-        <a href="division-internal.html#" class="division-internal-item">
-          <span class="division-internal-item__title">
-            Автокосметика и автохимия
-          </span>
-            <span class="division-internal-item__arrow-stat">
-            <svg>
-              <use xlink:href="assets/img/icons.svg#arrow-right"></use>
-            </svg>
-          </span>
-            <span class="division-internal-item__arrow">
-            <img src="assets/img/divisions/devision-arrow.png" alt="">
-          </span>
-        </a>
-
-        <a href="division-internal.html#" class="division-internal-item">
-          <span class="division-internal-item__title">
-            Масла
-          </span>
-            <span class="division-internal-item__arrow-stat">
-            <svg>
-              <use xlink:href="assets/img/icons.svg#arrow-right"></use>
-            </svg>
-          </span>
-            <span class="division-internal-item__arrow">
-            <img src="assets/img/divisions/devision-arrow.png" alt="">
-          </span>
-        </a>
-
-        <a href="division-internal.html#" class="division-internal-item">
-          <span class="division-internal-item__title">
-            Автолампы
-          </span>
-            <span class="division-internal-item__arrow-stat">
-            <svg>
-              <use xlink:href="assets/img/icons.svg#arrow-right"></use>
-            </svg>
-          </span>
-            <span class="division-internal-item__arrow">
-            <img src="assets/img/divisions/devision-arrow.png" alt="">
-          </span>
-        </a>
-
-        <a href="division-internal.html#" class="division-internal-item">
-          <span class="division-internal-item__title">
-            Аксессуары
-          </span>
-            <span class="division-internal-item__arrow-stat">
-            <svg>
-              <use xlink:href="assets/img/icons.svg#arrow-right"></use>
-            </svg>
-          </span>
-            <span class="division-internal-item__arrow">
-            <img src="assets/img/divisions/devision-arrow.png" alt="">
-          </span>
-        </a>
-
-    </div>
-</section>
+            <?php foreach ($this->menu['catalog'] as $item): ?>
+                <a href="<?= $this->alias(['catalog'=>$item['alias']]) ?>" class="division-internal-item">
+                  <span class="division-internal-item__title">
+                    <?= $item['name'] ?>
+                  </span>
+                    <span class="division-internal-item__arrow-stat">
+                        <svg>
+                          <use xlink:href="<?= PATH.TEMPLATE ?>assets/img/icons.svg#arrow-right"></use>
+                        </svg>
+                    </span>
+                        <span class="division-internal-item__arrow">
+                    <img src="<?= PATH.TEMPLATE ?>assets/img/divisions/devision-arrow.png" alt="">
+                  </span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </section>
+<?php  endif; ?>
 
 <section class="offers">
     <div class="offers__tabs">
         <ul class="offers__tabs_header">
             <li class="active">
                 <div class="icon-offer"><svg>
-                        <use xlink:href="assets/img/icons.svg#hit"></use>
+                        <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hit"></use>
                     </svg></div>Хиты продаж
             </li>
             <li>
                 <div class="icon-offer">
                     <svg>
-                        <use xlink:href="assets/img/icons.svg#hot"></use>
+                        <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hot"></use>
                     </svg>
                 </div>
                 Горячие предложения
@@ -198,7 +101,7 @@
 
                     <div class="offers__tabs_card swiper-slide">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -261,14 +164,14 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hit"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hit"></use>
                             </svg>
                         </div>
                     </div>
 
                     <div class="offers__tabs_card swiper-slide">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -328,14 +231,14 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hit"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hit"></use>
                             </svg>
                         </div>
                     </div>
 
                     <div class="offers__tabs_card swiper-slide">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -395,14 +298,14 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hit"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hit"></use>
                             </svg>
                         </div>
                     </div>
 
                     <div class="offers__tabs_card swiper-slide">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -462,14 +365,14 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hit"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hit"></use>
                             </svg>
                         </div>
                     </div>
 
                     <div class="offers__tabs_card swiper-slide">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -529,7 +432,7 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hit"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hit"></use>
                             </svg>
                         </div>
                     </div>
@@ -546,7 +449,7 @@
                 <div class="offers__tabs_wrapper swiper-wrapper">
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -606,13 +509,13 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hot"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hot"></use>
                             </svg>
                         </div>
                     </div>
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -672,13 +575,13 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hot"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hot"></use>
                             </svg>
                         </div>
                     </div>
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -738,14 +641,14 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hot"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hot"></use>
                             </svg>
                         </div>
                     </div>
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
 
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -805,7 +708,7 @@
                         <button class="offers__btn">купить сейчас</button>
                         <div class="icon-offer">
                             <svg>
-                                <use xlink:href="assets/img/icons.svg#hot"></use>
+                                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#hot"></use>
                             </svg>
                         </div>
                     </div>
@@ -822,7 +725,7 @@
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
 
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -886,7 +789,7 @@
                     </div>
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -950,7 +853,7 @@
                     </div>
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -1015,7 +918,7 @@
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
 
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -1089,7 +992,7 @@
                 <div class="offers__tabs_wrapper swiper-wrapper">
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -1154,7 +1057,7 @@
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
 
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -1219,7 +1122,7 @@
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
 
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -1284,7 +1187,7 @@
                     <div class="offers__tabs_card">
                         <div class="offers__tabs_image">
 
-                            <img src="assets/img/offers.png" alt="">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/offers.png" alt="">
                         </div>
                         <div class="offers__tabs_description">
                             <div class="offers__tabs_name">
@@ -1352,12 +1255,12 @@
         </div>
         <div class="offers__controls controls _prev">
             <svg>
-                <use xlink:href="assets/img/icons.svg#arrow"></use>
+                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#arrow"></use>
             </svg>
         </div>
         <div class="offers__controls controls _next">
             <svg>
-                <use xlink:href="assets/img/icons.svg#arrow"></use>
+                <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#arrow"></use>
             </svg>
         </div>
     </div>
@@ -1375,7 +1278,7 @@
                 <a href="index.html" class="about__description_readmore readmore">Читать подробнее</a>
             </div>
             <div class="about__image">
-                <img src="assets/img/about.png" alt="">
+                <img src="<?= PATH . TEMPLATE?>assets/img/about.png" alt="">
             </div>
         </section>
 
@@ -1385,34 +1288,34 @@
                 <div class="advantages__row advantages__row_left">
                     <div class="advantages__item">
                         <div class="advantages__item_header">Опыт работы свыше 14 лет</div>
-                        <img src="assets/img/advantages/adv1.png" class="advantages__item_image" alt="">
+                        <img src="<?= PATH . TEMPLATE?>assets/img/advantages/adv1.png" class="advantages__item_image" alt="">
                     </div>
                     <div class="advantages__item">
                         <div class="advantages__item_header">Комплексный подход</div>
-                        <img src="assets/img/advantages/adv2.png" class="advantages__item_image" alt="">
+                        <img src="<?= PATH . TEMPLATE?>assets/img/advantages/adv2.png" class="advantages__item_image" alt="">
                     </div>
                     <div class="advantages__item">
                         <div class="advantages__item_header">Квалифицированные сотрудники</div>
-                        <img src="assets/img/advantages/adv3.png" class="advantages__item_image" alt="">
+                        <img src="<?= PATH . TEMPLATE?>assets/img/advantages/adv3.png" class="advantages__item_image" alt="">
                     </div>
                 </div>
                 <div class="advantages__row advantages__row_right">
                     <div class="advantages__item">
                         <div class="advantages__item_header">Долгосрочное сотрудничество</div>
                         <div class="advantages__item_image">
-                            <img src="assets/img/advantages/adv4.png" alt="" class="advantages__item_image">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/advantages/adv4.png" alt="" class="advantages__item_image">
                         </div>
                     </div>
                     <div class="advantages__item">
                         <div class="advantages__item_header">Работаем со всеми современными системами</div>
                         <div class="advantages__item_image">
-                            <img src="assets/img/advantages/adv5.png" alt="" class="advantages__item_image">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/advantages/adv5.png" alt="" class="advantages__item_image">
                         </div>
                     </div>
                     <div class="advantages__item">
                         <div class="advantages__item_header">Гарантия качества</div>
                         <div class="advantages__item_image">
-                            <img src="assets/img/advantages/adv6.png" alt="" class="advantages__item_image">
+                            <img src="<?= PATH . TEMPLATE?>assets/img/advantages/adv6.png" alt="" class="advantages__item_image">
                         </div>
                     </div>
                 </div>
@@ -1493,7 +1396,7 @@
 <div class="search ">
     <button>
         <svg class="inline-svg-icon svg-search">
-            <use xlink:href="assets/img/icons.svg#search"></use>
+            <use xlink:href="<?= PATH . TEMPLATE?>assets/img/icons.svg#search"></use>
         </svg>
     </button>
     <input type="search" placeholder="Поиск по каталогу">

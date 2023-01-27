@@ -21,7 +21,7 @@
                         <input id="<?=$row?>" type="file" name="<?=$row?>" class="single_img" accept="image/*,image/jpeg,image/png,image/gif">
                     </label>
                 </div>
-                <div class="vg-wrap vg-element vg-full">
+                <div class="vg-wrap vg-element vg-full hover">
                     <div class="vg-element vg-left img_show main_img_show">
                         <?php if($this->data[$row]):?>
                         <img src="<?= PATH . UPLOAD_DIR. $this->data[$row] ?>">
