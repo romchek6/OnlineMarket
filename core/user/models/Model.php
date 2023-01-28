@@ -122,7 +122,7 @@ class Model extends BaseModel
 
                     foreach ($goods as $key => $item){
 
-                        $this->applyDiscount($data[$key] , $item['discount']);
+                        $this->applyDiscount($goods[$key] , $item['discount']);
 
                     }
 

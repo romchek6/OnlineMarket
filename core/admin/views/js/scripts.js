@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded' , () =>{
+
+    function hideMessages(){
+
+        document.querySelectorAll('.success , .error').forEach(item=>item.remove())
+
+        document.removeEventListener('click' , hideMessages)
+
+    }
+
+    document.addEventListener('click' , hideMessages)
+
+})
+
 document.querySelector('.sitemap-button').onclick = (e) => {
 
     e.preventDefault()
@@ -627,21 +641,3 @@ function createJsSortable(form){
     }
 
 }
-
-document.addEventListener('DOMContentLoaded' , () =>{
-
-    console.log(1)
-
-    function hideMessages(){
-
-        document.querySelectorAll('.success , .error').forEach(item=>item.remove())
-
-        console.log(1)
-
-        document.removeEventListener('click' , hideMessages)
-
-    }
-
-    document.addEventListener('click' , hideMessages)
-
-})

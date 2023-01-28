@@ -14,6 +14,8 @@ abstract class BaseUser extends \core\base\controllers\BaseController
 
     protected $menu;
 
+    protected $breadcrumbs;
+
     /*Проектные свойства*/
 
     protected $socials;
@@ -52,9 +54,12 @@ abstract class BaseUser extends \core\base\controllers\BaseController
 
     protected function outputData(){
 
+        $args = func_get_arg(0);
+        $vars = $args ? $args : [];
+
+        $this->breadcrumbs = $this->render(TEMPLATE . 'include/breadcrumbs');
+
         if(!$this->content){
-            $args = func_get_arg(0);
-            $vars = $args ? $args : [];
 
 //            if(!$this->template) $this->template = ADMIN_TEMPLATE . 'show';
 
@@ -197,6 +202,73 @@ abstract class BaseUser extends \core\base\controllers\BaseController
         if(($counter >= 10 && $counter <= 20 ) || ($char >= 5 && $char <= 9) || !$char) return $arr[0] ?? null;
         elseif ($char ===1) return $arr[1] ?? null;
         else return $arr[2] ?? null;
+
+    }
+
+    protected function showGoods($data , $parameters , $template = 'goodsItem'){
+
+        if(!empty($data)){
+
+            echo $this->render(TEMPLATE . 'include/' . $template , compact('data' , 'parameters'));
+
+        }
+
+    }
+
+    protected function dateFormat($date){
+
+        if(!$date){
+
+            return;
+
+        }
+
+        $daysArr = [
+            'Sunday'=>'Воскресенье',
+            'Monday'=>'Понедельник',
+            'Tuesday'=>'Вторник',
+            'Wednesday'=>'Среда',
+            'Thursday'=>'Четверг',
+            'Friday'=>'Пятница',
+            'Saturday'=>'Суббота'
+        ];
+
+        $monthsArr = [
+            1=>'Январь',
+            2=>'Февраль',
+            3=>'Март',
+            4=>'Апрель',
+            5=>'Май',
+            6=>'Июнь',
+            7=>'Июль',
+            8=>'Август',
+            9=>'Сентябрь',
+            10=>'Октябрь',
+            11=>'Ноябрь',
+            12=>'Декабрь',
+        ];
+
+        $dateArr = [];
+
+        $dateData = new \DateTime($date);
+
+        $dateArr['year'] = $dateData->format('Y');
+
+        $dateArr['month'] = $monthsArr[$this->clearNum($dateData->format('m'))];
+
+        $dateArr['monthFormat'] = preg_match('/т$/u', $dateArr['month']) ?$dateArr['month'] . 'а' :
+            preg_replace('/[ьй]/u' , 'я' , $dateArr['month']);
+
+        $dateArr['weekDay'] = $daysArr[$dateData->format('l')];
+
+        $dateArr['day'] = $dateData->format('d');
+
+        $dateArr['time'] = $dateData->format('H:i:s');
+
+        $dateArr['format'] = mb_strtolower($dateArr['day']) . ' ' .
+            $dateArr['monthFormat'] . ' ' . $dateArr['year'];
+
+        return $dateArr;
 
     }
 

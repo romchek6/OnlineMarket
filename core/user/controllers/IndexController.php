@@ -20,20 +20,53 @@ class IndexController extends BaseUser{
             'order'=>['menu_position']
         ]);
 
-        $arrHits = ['hit', 'sale' , 'new', 'hot'];
+        $advantages = $this->model->get('advantages' , [
+            'where'=>['visible' => 1],
+            'order'=>['menu_position']
+        ]);
+
+        $news = $this->model->get('news' , [
+            'where' =>['visible' =>1],
+            'order' =>['date'],
+            'order_direction' =>['DESC'],
+            'limit'=> 3
+        ]);
+
+        $arrHits = [
+            'hit' =>[
+                'name' =>'Хиты продаж',
+                'icon' => '<svg>
+                        <use xlink:href="' . PATH . TEMPLATE . 'assets/img/icons.svg#hit"></use>
+                    </svg>'
+            ],
+            'hot'=>[
+                'name' =>'Горячие предложения',
+                'icon' => '<svg>
+                        <use xlink:href="' . PATH . TEMPLATE . 'assets/img/icons.svg#hot"></use>
+                    </svg>'
+            ],
+            'sale'=>[
+                'name' =>'Акции',
+                'icon' => '%'
+            ],
+            'new'=>[
+                'name' =>'Новинки',
+                'icon' => 'new'
+            ]
+        ];
 
         $goods = [];
 
-        foreach ($arrHits as $type){
+        foreach ($arrHits as $type => $item){
 
             $goods[$type] = $this->model->getGoods([
-                'where' => [$type => 1],
+                'where' => [$type => 1 , 'visible' => 1],
                 'limit' => 6
             ]);
 
         }
 
-        return compact('sales');
+        return compact('sales', 'arrHits' , 'goods' , 'advantages' , 'news');
 
     }
 
