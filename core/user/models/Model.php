@@ -161,7 +161,7 @@ class Model extends BaseModel
 
                         foreach ($item as $row => $rowValue){
 
-                            if(strpos($row , 'f_') ===0){
+                            if(strpos($row , 'f_') === 0){
 
                                 $name = preg_replace('/^f_/' , '' ,$row);
 

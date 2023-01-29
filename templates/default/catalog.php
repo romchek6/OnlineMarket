@@ -13,6 +13,7 @@
                 <h2>По Вашему запросу ничего не найдено</h2>
             <?php else: ?>
                 <aside class="catalog-aside">
+                    <?php if(!empty($catalogPrices) ||  !empty($catalogFilters)): ?>
                     <div class="catalog-aside__wrap">
                         <div class="catalog-aside-block">
                             <div class="catalog-aside-block__top">
@@ -24,7 +25,7 @@
                                         сортировка
                                     </div>
                                 </div>
-                                <button class="catalog-filter-wrap__remove">Очистить все</button>
+                                <button class="catalog-filter-wrap__remove" onclick="location.href = location.pathname">Очистить все</button>
                             </div>
                             <div class="catalog-aside-block__content catalog-aside-block__drop">
                                 <div class="catalog-aside-block__drop-close">
@@ -33,186 +34,78 @@
                                         <path d="M27 25.15L1.88.32a1.1 1.1 0 0 0-1.56 0 1.08 1.08 0 0 0 0 1.54l25.12 24.83a1.13 1.13 0 0 0 .78.32 1.11 1.11 0 0 0 .78-.32 1.08 1.08 0 0 0 0-1.54z"></path>
                                     </svg>
                                 </div>
-                                <form action="catalog.html#" class="catalog-filter">
-                                    <div class="catalog-filter-item catalog-filter-item_open">
-                                        <div class="catalog-filter-item__title">Фильтр-1<span class="catalog-filter-item__toggle"></span>
-                                        </div>
-                                        <div class="catalog-filter-item__content">
-                                            <div class="catalog-range-slider">
-                                                <div class="catalog-filter-range__inputs">
-                                                    <div class="catalog-filter-range__limit">
-                                                        <div class="catalog-filter-range__text">От</div>
-                                                        <input type="text" value="0" class="catalog-filter-range__input js-rangeSliderMinimal">
-                                                    </div>
-                                                    <div class="catalog-filter-range__limit">
-                                                        <div class="catalog-filter-range__text">До</div>
-                                                        <input value="1000" type="text" class="catalog-filter-range__input js-rangeSliderMaximal">
+                                <form action="<?= $this->alias(['catalog' . (!empty($this->parameters['alias']) ? '/' . $this->parameters['alias']:'')]) ?>" class="catalog-filter">
+                                    <?php if(!empty($catalogPrices)): ?>
+                                        <div class="catalog-filter-item catalog-filter-item_open">
+                                            <div class="catalog-filter-item__title">Цена<span class="catalog-filter-item__toggle"></span>
+                                            </div>
+                                            <div class="catalog-filter-item__content">
+                                                <div class="catalog-range-slider" style="margin-bottom: 20px">
+                                                    <div class="catalog-filter-range__inputs">
+                                                        <div class="catalog-filter-range__limit">
+                                                            <div class="catalog-filter-range__text">От</div>
+                                                            <input type="text" name="min_price" value="<?= !empty($_GET['min_price'])?$_GET['min_price']:$catalogPrices['min_price'] ?>" class="catalog-filter-range__input js-rangeSliderMinimal">
+                                                        </div>
+                                                        <div class="catalog-filter-range__limit">
+                                                            <div class="catalog-filter-range__text">До</div>
+                                                            <input name="max_price" value="<?= !empty($_GET['max_price'])?$_GET['max_price']:$catalogPrices['max_price'] ?>" type="text" class="catalog-filter-range__input js-rangeSliderMaximal">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <ul class="catalog-filter-item__list">
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">
-                                Критерий-1
-                              </span>
-                                                        <span class="checkbox__type">
-                                (567)
-                              </span>
-                                                    </label>
-                                                </li>
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">
-                                Критерий-2
-                              </span>
-                                                        <span class="checkbox__type">
-                                (321)
-                              </span>
-                                                    </label>
-                                                </li>
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">
-                                Критерий-3
-                              </span>
-                                                        <span class="checkbox__type">
-                                (332)
-                              </span>
-                                                    </label>
-                                                </li>
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">
-                                Критерий-4
-                              </span>
-                                                        <span class="checkbox__type">
-                                (459)
-                              </span>
-                                                    </label>
-                                                </li>
-                                            </ul>
                                         </div>
-                                    </div>
+                                    <?php endif; ?>
 
-                                    <div class="catalog-filter-item">
-                                        <div class="catalog-filter-item__title">Фильтр-2<span class="catalog-filter-item__toggle"></span></div>
-                                        <div class="catalog-filter-item__content">
-                                            <ul class="catalog-filter-item__list">
+                                    <?php if(!empty($catalogFilters)): ?>
 
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">Критерий-1</span>
-                                                        <span class="checkbox__type">
-                                (567)
-                              </span>
-                                                    </label>
-                                                </li>
-
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">Критерий-2</span>
-                                                        <span class="checkbox__type">
-                                (321)
-                              </span>
-                                                    </label>
-                                                </li>
-
-                                            </ul>
+                                    <?php foreach ($catalogFilters as $item): ?>
+                                        <div class="catalog-filter-item">
+                                            <div class="catalog-filter-item__title"><?= $item['name'] ?><span class="catalog-filter-item__toggle"></span></div>
+                                            <div class="catalog-filter-item__content">
+                                                <ul class="catalog-filter-item__list">
+                                                    <?php foreach ($item['values'] as $value): ?>
+                                                    <li class="catalog-filter-item__unit">
+                                                        <label class="catalog-filter-item__check checkbox">
+                                                            <input type="checkbox" name="filters[]" value="<?= $value['id'] ?>" <?= !empty($_GET['filters']) && in_array($value['id'] , $_GET['filters']) ? 'checked':'' ?> class="checkbox__box visually-hidden">
+                                                            <span class="checkbox__span"></span>
+                                                            <span class="checkbox__text"><?= $value['name'] ?></span>
+                                                            <span class="checkbox__type">
+                                                                <?= $value['count'] ?? 0 ?>
+                                                            </span>
+                                                        </label>
+                                                    </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php endforeach; ?>
 
-                                    <div class="catalog-filter-item">
-                                        <div class="catalog-filter-item__title">Фильтр-3<span class="catalog-filter-item__toggle"></span></div>
-                                        <div class="catalog-filter-item__content">
-                                            <ul class="catalog-filter-item__list">
-
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">Критерий-1</span>
-                                                        <span class="checkbox__type">
-                                (567)
-                              </span>
-                                                    </label>
-                                                </li>
-
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">Критерий-2</span>
-                                                        <span class="checkbox__type">
-                                (321)
-                              </span>
-                                                    </label>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="catalog-filter-item">
-                                        <div class="catalog-filter-item__title">Фильтр-4<span class="catalog-filter-item__toggle"></span></div>
-                                        <div class="catalog-filter-item__content">
-                                            <ul class="catalog-filter-item__list">
-
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">Критерий-1</span>
-                                                        <span class="checkbox__type">
-                                (567)
-                              </span>
-                                                    </label>
-                                                </li>
-
-                                                <li class="catalog-filter-item__unit">
-                                                    <label class="catalog-filter-item__check checkbox">
-                                                        <input type="checkbox" class="checkbox__box visually-hidden">
-                                                        <span class="checkbox__span"></span>
-                                                        <span class="checkbox__text">Критерий-2</span>
-                                                        <span class="checkbox__type">
-                                (321)
-                              </span>
-                                                    </label>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-
+                                    <?php endif; ?>
+                                    <button class="card-item__btn">Применить</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </aside>
                 <section class="catalog-section catalog-section__four">
                     <div class="catalog-section-top">
                         <div class="catalog-section-top-items">
-                            <div class="catalog-section-top-items__title catalog-section-top-items__unit">
-                                Сортировать по:
-                            </div>
-                            <div class="catalog-section-top-items__unit catalog-section-top-items__toggle">
-                                Названию
-                            </div>
-                            <div class="catalog-section-top-items__unit catalog-section-top-items__toggle">
-                                Цене
-                            </div>
+                            <?php if(!empty($order)): ?>
+                                <div class="catalog-section-top-items__title catalog-section-top-items__unit">
+                                    Сортировать по:
+                                </div>
+                                <?php $GET = $_GET ?? []; ?>
+
+                                <?php foreach ($order as $name => $item): ?>
+
+                                    <a href="<?= $this->alias('catalog/'. ($this->parameters['alias'] ??'') , array_merge($GET, ['order' => $item]))?>"
+                                       class="catalog-section-top-items__unit catalog-section-top-items__toggle <?= preg_match('/desc$/' , $item) ? 'order-desc': ''; ?>" style="text-decoration: none">
+                                        <?= $name ?>
+                                    </a>
+
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                             <div class="catalog-section-top-items__unit catalog-section-top-items__toggle">
                                 Показывать по:
                             </div>
