@@ -124,7 +124,7 @@ abstract class BaseModel extends BaseModelMethods
 
         $order = $this->createOrder($set, $table);
 
-        $where = $this->createWhere($set, $table);
+        $paginationWhere = $where = $this->createWhere($set, $table);
 
         if (!$where) $new_where = true;
         else $new_where = false;
@@ -132,12 +132,16 @@ abstract class BaseModel extends BaseModelMethods
         $join_arr = $this->createJoin($set, $table, $new_where);
 
         $fields .= $join_arr['fields'];
+
         $join = $join_arr['join'];
+
         $where .= $join_arr['where'];
 
         $fields = rtrim($fields, ',');
 
         $limit = $set['limit'] ? 'LIMIT ' . $set['limit'] : '';
+
+        $this->createPagination($set , $table , $paginationWhere , $limit);
 
         $query = "SELECT $fields FROM $table $join $where $order $limit";
 
@@ -153,6 +157,30 @@ abstract class BaseModel extends BaseModelMethods
         }
 
         return $res;
+
+    }
+
+    protected function createPagination($set , $table , $where ,&$limit){
+
+        if(!empty($set['pagination'])){
+
+            $this->postNumber = isset($set['pagination']['qty']) ? (int)$set['pagination']['qty'] : QTY;
+
+            $this->linksNumber = isset($set['pagination']['qty_links']) ? (int)$set['pagination']['qty_links'] : QTY_LINKS;
+
+            $this->page = !is_array($set['pagination']) ? (int)$set['pagination'] : (int)($set['pagination']['page'] ?? 1);
+
+            if($this->page > 0 && $this->postNumber > 0){
+
+                $this->totalCount = $this->getTotalCount($table , $where);
+
+                $this->numberPages = (int)ceil($this->totalCount / $this->postNumber);
+
+                $limit = 'LIMIT ' . ($this->page - 1) * $this->postNumber . ',' . $this->postNumber;
+
+            }
+
+        }
 
     }
 

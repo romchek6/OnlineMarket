@@ -119,9 +119,9 @@ abstract class BaseUser extends \core\base\controllers\BaseController
 
                         $key .= '[]';
 
-                        foreach ($item as $value){
+                        foreach ($item as $k => $v){
 
-                            $str .= $key . '=' . $value;
+                            $str .= $key . '=' . $v . (!empty($item[$k + 1]) ? '&' : '');
 
                         }
 

@@ -16,11 +16,9 @@ $classPrefix = $parameters['prefix'] ?? 'offers';
         <div class="<?= $classPrefix ?>__tabs_name">
             <span><?= $data['name'] ?></span>
             <?= $data['short_content'] ?>
-
+            <div class="card-main-info__table">
             <?php if(!empty($data['filters'])): ?>
-                <div class="card-main-info__table">
                     <?php foreach ($data['filters'] as $item):?>
-
                         <div class="card-main-info__table-row">
                             <div class="card-main-info__table-item">
                                 <?= $item['name'] ?>
@@ -30,12 +28,9 @@ $classPrefix = $parameters['prefix'] ?? 'offers';
                                 <?= implode(', ' ,array_column($item['values'] , 'name')) ?>
                             </div>
                         </div>
-
                     <?php endforeach; ?>
             <?php endif; ?>
-
             </div>
-
         </div>
         <div class="<?= $classPrefix ?>__tabs_price">
             Цена:<?= !empty($data['old_price'])?'<span class="offers_old-price">'.$data['old_price'].'</span>':'' ?><span class="offers_new-price"><?= $data['price'] ?></span>

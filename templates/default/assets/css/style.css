@@ -7524,3 +7524,28 @@ input[type='search'], input[type='text'], input[type='email'] {
 		max-width: 100%;
 	}
 }
+
+.qtyItems{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	background: white;
+	border: 1px solid #D4DDE1;
+	padding: 5px;
+	display: none;
+}
+
+.qtyItems.opened{
+	display: block;
+}
+
+.qtyItems a{
+	text-align: center;
+	text-decoration: none;
+	color: #2D3033;
+}
+.unselectable {
+	user-select: none;
+}

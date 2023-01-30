@@ -5,6 +5,12 @@ namespace core\base\models;
 abstract  class BaseModelMethods
 {
 
+    protected $postNumber;
+    protected $linksNumber;
+    protected $numberPages;
+    protected $page;
+    protected $totalCount;
+
     protected $sqlFunc =['NOW()' , 'RAND()'];
 
     protected $tableRows;
@@ -562,6 +568,12 @@ abstract  class BaseModelMethods
         }
 
         return $arr;
+
+    }
+
+    protected function getTotalCount($table , $where){
+
+        return $this->query("SELECT COUNT(*) as count FROM $table $where")[0]['count'];
 
     }
 
