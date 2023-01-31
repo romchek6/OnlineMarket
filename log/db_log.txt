@@ -1,0 +1,20 @@
+Fault: 20-01-2023 2:23:15 - ошибка в SQL запросе: (SELECT id as id,CASE WHEN name <> '' THEN name END as name,('goods') AS table_name,('current_table') AS current_table FROM goods  WHERE ((name LIKE '%qweq%' ) OR (content LIKE '%qweq%' ) OR (img LIKE '%qweq%' ) OR (main_img LIKE '%qweq%' ) OR (gallery_img LIKE '%qweq%' ) OR (alias LIKE '%qweq%' ))  ) (SELECT id as id,CASE WHEN name <> '' THEN name END as name,('filters') AS table_name,NULL FROM filters  WHERE ((name LIKE '%qweq%' ) OR (content LIKE '%qweq%' ))  ) ORDER BY current_table DESC, ((name LIKE '%qweq%')) DESC - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT id as id,CASE WHEN name <> '' THEN name END as name,('filters') AS table' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 26-01-2023 16:34:50 - ошибка в SQL запросе: UPDATE settings SET id='1',name='Автозапчасти',keywords='',description='',phone='+8(800)000-55-35',email='onlinestore@onlinestore.ru',address='Тюмень',menu_position='2',number_of_years='' WHERE id = '1'  - 1366 Incorrect integer value: '' for column 'number_of_years' at row 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 26-01-2023 18:51:38 - ошибка в SQL запросе: SELECT filters.*,goods_filters.* FROM filters LEFT JOIN goods_filters ON filters.id=goods_filters.filters_id WHERE goods_filters.goods_id = (SELECT goods.id FROM goods    )    - 1242 Subquery returns more than 1 row
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 26-01-2023 18:53:22 - ошибка в SQL запросе: SELECT filters.*,goods_filters.* FROM filters LEFT JOIN goods_filters ON filters.id=goods_filters.filters_id WHERE goods_filters.goods_id = (SELECT goods.id FROM goods    )    - 1242 Subquery returns more than 1 row
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 26-01-2023 18:53:38 - ошибка в SQL запросе: SELECT filters.*,goods_filters.* FROM filters LEFT JOIN goods_filters ON filters.id=goods_filters.filters_id WHERE goods_filters.goods_id = (SELECT goods.id FROM goods    )    - 1242 Subquery returns more than 1 row
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
