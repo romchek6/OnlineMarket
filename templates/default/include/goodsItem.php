@@ -8,7 +8,7 @@ $classPrefix = $parameters['prefix'] ?? 'offers';
 
 ?>
 
-<div class="<?= $mainClass ?>">
+<a href="<?= $this->alias(['product' => $data['alias']]) ?>" class="<?= $mainClass ?>" style="color: black ; text-decoration: none">
     <div class="<?= $classPrefix ?>__tabs_image">
         <img src="<?= $this->img($data['img'] ) ?>" alt="<?= $data['name'] ?>">
     </div>
@@ -36,11 +36,11 @@ $classPrefix = $parameters['prefix'] ?? 'offers';
             Цена:<?= !empty($data['old_price'])?'<span class="offers_old-price">'.$data['old_price'].'</span>':'' ?><span class="offers_new-price"><?= $data['price'] ?></span>
         </div>
     </div>
-    <button class="<?= $classPrefix ?>__btn" data-addToCara="<?= $data['id'] ?>">купить</button>
+    <button class="<?= $classPrefix ?>__btn" data-addToCart="<?= $data['id'] ?>">купить</button>
     <?php if(!empty($parameters['icon'])):?>
         <div class="icon-offer">
             <?= $parameters['icon'] ?>
         </div>
     <?php endif; ?>
-</div>
+</a>
 <?php endif; ?>
