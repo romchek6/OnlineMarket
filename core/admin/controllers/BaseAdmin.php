@@ -1047,6 +1047,8 @@ abstract class BaseAdmin extends BaseController
                             if($columns['parent_id']) $order[] = 'parent_id';
                             else $order[] = $parent['REFERENCED_COLUMN_NAME'];
 
+
+
                             $id = $this->model->get($parent['REFERENCED_TABLE_NAME'],[
                                 'fields' => [$parent['REFERENCED_COLUMN_NAME']],
                                 'order' => $order,

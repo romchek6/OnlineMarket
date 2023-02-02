@@ -114,7 +114,7 @@ class Settings
 
     private $rootItems = [
         'name'=>'Корневая',
-        'tables'=>['goods' , 'filters' , 'articles', 'catalog']
+        'tables'=>['filters' , 'articles', 'catalog']
     ];
 
     private $manyToMany =[

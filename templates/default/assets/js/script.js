@@ -221,3 +221,168 @@ $(function () {
     })
 
 });
+
+document.addEventListener('DOMContentLoaded' , () =>{
+
+    let moreBnt = document.querySelector('.card-main-info__description .more-button')
+
+    if(moreBnt){
+
+        moreBnt.addEventListener('click' , e => {
+
+          e.preventDefault()
+
+          document.querySelectorAll('.card-tabs__toggle.tabs__toggle')[1].dispatchEvent(new Event('click'))
+
+          window.scrollTo({
+              top :document.querySelector('.card-tabs').getBoundingClientRect().top + scrollY,
+              behavior: 'smooth'
+          })
+
+        })
+
+
+    }
+
+    changeQty();
+
+    addToCart();
+
+})
+
+function addToCart(){
+
+    document.querySelectorAll('[data-addToCart]').forEach(item =>{
+
+        item.addEventListener('click' , e =>{
+
+            e.preventDefault()
+
+            let cart = {}
+
+            cart.id = +item.getAttribute('data-addToCart')
+
+            if(cart.id && !isNaN(cart.id)){
+
+                let productContainer = item.closest('[data-productContainer]') || document
+
+                cart.qty = 1
+
+                let qtyBlock = productContainer.querySelector('[data-quantity]')
+
+                if(qtyBlock){
+
+                    cart.qty = +qtyBlock.innerHTML || 1
+
+                }
+
+                cart.ajax = 'add_to_cart'
+
+                $.ajax({
+                    url: '/',
+                    data: cart,
+                    error: res =>{
+                        console.error(res)
+                    },
+                    success: res =>{
+
+                        try {
+
+                            res =JSON.parse(res)
+
+                            console.log(res)
+
+                            if(typeof res.current === 'undefined'){
+
+                                throw new Error('')
+
+                            }
+
+                            item.setAttribute('data-toCardAdded' , true);
+
+                            ['data-totalQty' , 'data-totalSum' , 'data-totalOldSum'].forEach(attr => {
+
+                                let cartAttr = attr.replace(/data-/ , '').replace(/([^A-Z])([A-Z])/g , '$1_$2').toLowerCase()
+
+                                document.querySelectorAll(`[${attr}]`).forEach(el =>{
+
+                                    if(typeof res[cartAttr] !== 'undefined'){
+                                        if(attr === 'data-totalQty'){
+
+                                            el.innerHTML = res[cartAttr]
+
+                                        }else{
+
+                                            el.innerHTML = res[cartAttr] + ' .руб'
+
+                                        }
+
+                                    }
+
+                                })
+
+                            })
+
+                        }catch (e){
+
+                            alert('Ошибка добавления в корзину')
+
+                        }
+                    }
+                })
+
+            }
+
+        })
+
+    })
+
+}
+
+function changeQty(){
+
+    document.querySelectorAll('[data-quantityPlus] , [data-quantityMinus]').forEach(item =>{
+
+        item.addEventListener('click' , e => {
+
+            e.preventDefault()
+
+            let productContainer = item.closest('[data-productContainer]') || document
+
+            let qtyEl = productContainer.querySelector('[data-quantity]')
+
+            if(qtyEl){
+
+                let qty = +qtyEl.innerHTML || 1
+
+                if(item.hasAttribute('data-quantityPlus')){
+
+                    qty++
+
+                }else{
+
+                    qty = qty <= 1 ? 1 : --qty
+
+                }
+
+                qtyEl.innerHTML = qty
+
+                let addToCart = productContainer.querySelector('[data-addToCart]')
+
+                if(addToCart){
+
+                    if(addToCart && addToCart.hasAttribute('data-toCartAdded')){
+
+                        addToCart.dispatchEvent(new Event('click'))
+
+                    }
+
+                }
+
+            }
+
+        })
+
+    })
+
+}

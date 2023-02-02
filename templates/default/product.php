@@ -22,7 +22,7 @@
     <section class="card-main">
         <div class="container">
             <div class="card-main__wrapper">
-                <div class="card-main-gallery-thumb">
+                <div class="card-main-gallery-thumb unselectable">
                     <?php if(!empty($data['gallery_img'])): ?>
                     <div class="card-main-gallery-thumb__container swiper-container">
                         <div class="swiper-wrapper">
@@ -45,7 +45,7 @@
                     </div>
                     <?php endif; ?>
                 </div>
-                <div class="card-main-gallery-slider">
+                <div class="card-main-gallery-slider unselectable">
                     <div class="card-main-gallery-slider__container swiper-container">
                         <div class="swiper-wrapper">
 
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-main-info">
+                <div class="card-main-info" data-productContainer>
                     <div class="card-main-info__description">
                         <div class="card-main-info-price">
                             <div class="card-main-info-price__text">
@@ -96,7 +96,7 @@
                                 <?php foreach ($data['filters'] as $item): ?>
 
                                 <?php
-                                   if(++$counter === 5) break;
+                                   if(++$counter > 5) break;
                                 ?>
 
                                 <div class="card-main-info__table-row">
@@ -112,9 +112,9 @@
 
                             </div>
                             <?php if(count($data['filters']) > 5): ?>
-                            <a href="card.html#" class="card-main-info__more more-button">
+                            <div class="card-main-info__more more-button">
                                 Показать все
-                            </a>
+                            </div>
                             <?php endif; ?>
                         <?php endif; ?>
                     </div>
@@ -127,14 +127,14 @@
                     Количество:
                   </span>
                                 <span class="card-main-info-size__body">
-                    <span class="card-main-info-size__control button card-main-info-size__control_minus js-counterDecrement"></span>
-                    <span class="card-main-info-size__count js-counterShow">1</span>
-                    <span class="card-main-info-size__control button card-main-info-size__control_plus js-counterIncrement"></span>
+                    <span class="card-main-info-size__control button card-main-info-size__control_minus js-counterDecrement" data-quantityMinus></span>
+                    <span class="card-main-info-size__count js-counterShow unselectable" data-quantity><?= $this->cart['goods'][$data['id']]['qty'] ?? 1 ?></span>
+                    <span class="card-main-info-size__control button card-main-info-size__control_plus js-counterIncrement" data-quantityPlus></span>
                   </span>
                             </label>
                         </div>
                         <div class="card-main-info__buttons">
-                            <a data-addToCart="<?= $data['id'] ?>" href="#" class="card-main-info__button button-basket button-blue button-big button">
+                            <a data-addToCart="<?= $data['id'] ?>" <?= !empty($this->cart['goods'][$data['id']]) ? 'data-toCartAdded' : '' ?> href="#" class="card-main-info__button button-basket button-blue button-big button">
                                 <svg>
                                     <use xlink:href="<?= PATH.TEMPLATE ?>assets/img/icons.svg#basket"></use>
                                 </svg>
@@ -179,80 +179,32 @@
                     <div class="card-tabs__bottom-wrapper">
 
                         <div class="card-tabs-item-wrapper tabs__tab">
-                            <ul>
-                                <li>Устраняет скрип дверей и петель</li>
-                                <li>Препятствует коррозии</li>
-                                <li>Препятствует обмерзанию</li>
-                                <li>Облегчает монтаж пластиковых труб</li>
-                                <li>Уменьшает трение поверхностей</li>
-                                <li>Продлевает срок службы резиновых уплотнителей</li>
-                                <li>Долговечна</li>
-                                <li>Обладает водоотталкивающими свойствами</li>
-                                <li>Обладает высокой термостойкостью (от -50°C до +230°C)</li>
-                                <li>Не требует распыления</li>
-                                <li>Не смывается и не стекает</li>
-                                <li>Не испаряется</li>
-                                <li>Нетоксична</li>
-                            </ul>
+                            <?=$data['content']?>
                         </div>
 
                         <div class="card-tabs-item-wrapper tabs__tab">
-                            <div class="card-main-info__table main-info card-main-indfo_toggle">
-                                <div class="card-main-info__table-row">
-                                    <div class="card-main-info__table-item">
-                                        Бренд
-                                    </div>
-                                    <div class="card-main-info__table-item">
-                                        ВМПАВТО
-                                    </div>
-                                </div>
+                            <div class="card-main-info__table main-info card-main-info_toggle">
+                                <?php if($data['filters']): ?>
 
-                                <div class="card-main-info__table-row">
-                                    <div class="card-main-info__table-item">
-                                        Вес
-                                    </div>
-                                    <div class="card-main-info__table-item">
-                                        0.1 кг
-                                    </div>
-                                </div>
+                                    <?php foreach ($data['filters'] as $item): ?>
 
-                                <div class="card-main-info__table-row">
-                                    <div class="card-main-info__table-item">
-                                        Номинальный объем
-                                    </div>
-                                    <div class="card-main-info__table-item">
-                                        10 гр
-                                    </div>
-                                </div>
+                                        <div class="card-main-info__table-row">
+                                            <div class="card-main-info__table-item">
+                                                <?= $item['name'] ?>
+                                            </div>
+                                            <div class="card-main-info__table-item">
+                                                <?= implode(', ' , array_column($item['values'] , 'name')) ?>
+                                            </div>
+                                        </div>
 
-                                <div class="card-main-info__table-row">
-                                    <div class="card-main-info__table-item">
-                                        Термостойкость
-                                    </div>
-                                    <div class="card-main-info__table-item">
-                                        от -50°C до +230°C
-                                    </div>
-                                </div>
-
-                                <div class="card-main-info__table-row">
-                                    <div class="card-main-info__table-item">
-                                        Номинальный объем
-                                    </div>
-                                    <div class="card-main-info__table-item">
-                                        10 гр
-                                    </div>
-                                </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
 
                             </div>
                         </div>
 
                         <div class="card-tabs-item-wrapper tabs__tab">
-                            <ul>
-                                <li>Самовывоз</li>
-                                <li>Курьером</li>
-                                <li>Наличный</li>
-                                <li>Безналичный расчет</li>
-                            </ul>
+                            <?= !empty($deliveryInfo['content'])? $deliveryInfo['content']: '' ?>
                         </div>
 
                     </div>
