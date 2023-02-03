@@ -18,6 +18,8 @@ abstract class BaseUser extends \core\base\controllers\BaseController
 
     protected $breadcrumbs;
 
+    protected $userData = [];
+
     /*Проектные свойства*/
 
     protected $socials;
@@ -410,6 +412,14 @@ HEREDOC;
 
     }
 
+    protected function setFormValues($key , $property = null , $arr= []){
+
+        !$arr && $arr = $_SESSION['res'] ?? [];
+
+        return $arr[$key] ?? ($this->$property[$key]??'');
+
+    }
+
     protected function addToCart($id , $qty){
 
         $id = $this->clearNum($id);
@@ -577,6 +587,26 @@ HEREDOC;
         $this->cart = [];
 
         return null;
+
+    }
+
+    protected function deleteCartData($id){
+
+        $id = $this->clearNum($id);
+
+        if($id){
+
+            $cart = &$this->getCart();
+
+            unset($cart[$id]);
+
+            $this->updateCart();
+
+            $this->getCartData(true);
+
+
+
+        }
 
     }
 

@@ -18,7 +18,10 @@ $classPrefix = $parameters['prefix'] ?? 'offers';
             <?= $data['short_content'] ?>
             <div class="card-main-info__table">
             <?php if(!empty($data['filters'])): ?>
+
+                    <?= $counter = 0; ?>
                     <?php foreach ($data['filters'] as $item):?>
+                        <?php if(++$counter > 3) break ?>
                         <div class="card-main-info__table-row">
                             <div class="card-main-info__table-item">
                                 <?= $item['name'] ?>

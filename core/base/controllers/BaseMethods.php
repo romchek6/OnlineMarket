@@ -6,16 +6,16 @@ trait BaseMethods
 {
 
 
-   protected function clearStr($str){
+    protected function clearStr($str){
 
-       if(is_array($str)){
-           foreach ($str as $key =>$item) $str[$key] = $this->clearStr($item);
-           return $str;
-       }else{
-           return trim(strip_tags($str));
-       }
+        if(is_array($str)){
+            foreach ($str as $key =>$item) $str[$key] = $this->clearStr($item);
+            return $str;
+        }else{
+            return trim(strip_tags($str));
+        }
 
-   }
+    }
 
    protected function clearNum($num){
 
@@ -51,13 +51,13 @@ trait BaseMethods
             exit();
    }
 
-   protected function getStyles(){
+    protected function getStyles(){
 
-       if($this->styles){
-           foreach ($this->styles as $style) echo '<link rel="stylesheet" href="'. $style .'">';
-       }
+        if($this->styles){
+            foreach ($this->styles as $style) echo '<link rel="stylesheet" href="'. $style .'">';
+        }
 
-   }
+    }
 
     protected function getScripts(){
 
@@ -67,21 +67,32 @@ trait BaseMethods
 
     }
 
-   protected function writeLog($message,$file = 'log.txt',$event = 'Fault'){
+    protected function writeLog($message,$file = 'log.txt',$event = 'Fault'){
 
-       $dateTime = new \DateTime();
+        $dateTime = new \DateTime();
 
-       $str = $event . ': ' . $dateTime->format('d-m-Y G:i:s') . ' - ' . $message . "\r\n";
+        $str = $event . ': ' . $dateTime->format('d-m-Y G:i:s') . ' - ' . $message . "\r\n";
 
-       file_put_contents('log/' . $file, $str , FILE_APPEND);
+        file_put_contents('log/' . $file, $str , FILE_APPEND);
 
-   }
+    }
 
-   protected function getController(){
+    protected function getController(){
 
-       return $this->controller?:
-           $this->controller = preg_split('/_?controller/' , strtolower(preg_replace('/([^A-Z])(A-Z)/' , '$1_$2' , (new \ReflectionClass($this))->getShortName())),0,PREG_SPLIT_NO_EMPTY)[0];
+        return $this->controller?:
+            $this->controller = preg_split('/_?controller/' , strtolower(preg_replace('/([^A-Z])(A-Z)/' , '$1_$2' , (new \ReflectionClass($this))->getShortName())),0,PREG_SPLIT_NO_EMPTY)[0];
 
-   }
+    }
+
+    protected function addSessionData($arr = []){
+        if(!$arr) $arr = $_POST;
+
+        foreach ($arr as $key => $item){
+            $_SESSION['res'][$key] = $item;
+        }
+
+        $this->redirect();
+
+    }
 
 }

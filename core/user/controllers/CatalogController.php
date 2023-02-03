@@ -37,7 +37,7 @@ class CatalogController extends BaseUser
 
         if($data){
 
-            $where = ['parent_id' => $data['id']];
+            $where['parent_id'] = $data['id'];
 
         }else{
 
