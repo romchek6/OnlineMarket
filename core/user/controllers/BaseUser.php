@@ -36,7 +36,7 @@ abstract class BaseUser extends \core\base\controllers\BaseController
             'where' =>['menu_position' => 1]
         ]);
 
-        if(!$this->isAjax() && !$this->isPost()){
+        if(!$this->isAjax()){
 
             $this->getCartData();
 

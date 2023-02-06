@@ -18,3 +18,7 @@ Fault: 26-01-2023 18:53:38 - ошибка в SQL запросе: SELECT filters.
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 06-02-2023 21:49:06 - ошибка в SQL запросе: SHOW COLUMNS FROM order - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order' at line 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
