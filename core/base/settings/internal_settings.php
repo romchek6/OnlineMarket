@@ -50,7 +50,8 @@ const USER_CSS_JS = [
         'assets/js/animation.gsap.min.js',
         'assets/js/bodyscrolllock/bodyScrollLock.min.js',
         'assets/js/app.js',
-        'assets/js/script.js'
+        'assets/js/script.js',
+        'assets/js/showMessage.js',
     ],
 ];
 
