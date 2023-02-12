@@ -53,6 +53,8 @@ trait ValidationHelper
 
         }
 
+        return $value;
+
     }
 
     protected function sendError($text , $class = 'error'){

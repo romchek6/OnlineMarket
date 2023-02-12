@@ -5727,7 +5727,8 @@ input[type='search'], input[type='text'], input[type='email'] {
 
 .catalog-internal {
 	margin-top: 20px;
-	margin-bottom: 60px
+	margin-bottom: 60px;
+	min-height: 200px;
 }
 
 .catalog-internal-wrap {

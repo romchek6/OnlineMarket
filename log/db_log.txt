@@ -22,3 +22,7 @@ Fault: 06-02-2023 21:49:06 - ошибка в SQL запросе: SHOW COLUMNS FR
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 13-02-2023 0:37:16 - ошибка в SQL запросе: SELECT order_statuses.id FROM order_statuses   ORDER BY order_statuses.menu_position ASC LIMIT 1 - 1146 Table 'onlinestore.order_statuses' doesn't exist
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+

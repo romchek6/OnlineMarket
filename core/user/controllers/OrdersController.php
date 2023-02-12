@@ -2,6 +2,7 @@
 
 namespace core\user\controllers;
 
+use core\base\models\UserModel;
 use core\user\helpers\ValidationHelper;
 
 class OrdersController extends BaseUser
@@ -93,7 +94,98 @@ class OrdersController extends BaseUser
 
         }
 
+        if(empty($visitor['email']) && empty($visitor['phone'])){
+
+            $this->sendError('Отсутствуют данные пользователя для оформелния заказа');
+
+        }
+
+        $visitorsWhere = $visitorsCondition = [];
+
+        if(!empty($visitor['email']) && !empty($visitor['phone'])){
+
+            $visitorsWhere = [
+                'email' => $visitor['email'],
+                'phone' => $visitor['phone']
+            ];
+
+            $visitorsCondition = ['OR'];
+
+        }else{
+
+            $visitorsKey = !empty($visitor['email']) ? 'email' : 'phone';
+
+            $visitorsWhere[$visitorsKey] = $visitor[$visitorsKey];
+
+        }
+
+        $resVisitor = $this->model->get('visitors' , [
+           'where' => $visitorsWhere,
+           'condition' => $visitorsCondition,
+           'limit' => 1
+        ]);
+
+        if($resVisitor){
+
+            $resVisitor = $resVisitor[0];
+
+            $order['visitors_id'] = $resVisitor['id'];
+
+        }else{
+
+            $order['visitors_id'] = $this->model->add('visitors' , [
+               'fields' => $visitor,
+               'return_id'
+            ]);
+
+        }
+
+        $order['total_sum'] = $this->cart['total_sum'];
+
+        $order['total_old_sum'] = $this->cart['total_old_sum'];
+
+        $order['total_qty'] = $this->cart['total_qty'];
+
+        $baseStatus = $this->model->get('orders_statuses',[
+           'fields' => ['id'],
+           'order' => ['menu_position'],
+           'limit' => 1
+        ]);
+
+        $baseStatus && $order['orders_statuses_id'] = $baseStatus[0]['id'];
+
+        $order['id'] = $this->model->add('orders' , [
+           'fields' => $order,
+           'return_id' => true
+        ]);
+
+        if(!$order['id']){
+
+            $this->sendError('Ошибка сохранения заказа. Свяжитесь с администрацией сайта по телефону - ' . $this->set['phone']);
+
+        }
+
+        if(!$resVisitor){
+
+            UserModel::instance()->checkUser($order['visitors_id']);
+
+        }
+
+        $this->sendSuccess('Спасибо за заказ в ближайшее время наши менеджеры свяжуться с Вами для уточнения деталей');
+
+        $this->sendOrderEmail(['order' => $order , 'visitor' => $visitor]);
+
+        $this->clearCart();
+
+        $this->redirect();
+
         $a = 1;
+
+    }
+
+    protected function sendOrderEmail(array $orderData){
+
+
 
     }
 
