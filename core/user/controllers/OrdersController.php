@@ -171,6 +171,12 @@ class OrdersController extends BaseUser
 
         }
 
+         if(!$this->setOrdersGoods($order)){
+
+             $this->sendError("Ошибка сохранения товаров заказа. Обратитесь к администрации сайта");
+
+         }
+
         $this->sendSuccess('Спасибо за заказ в ближайшее время наши менеджеры свяжуться с Вами для уточнения деталей');
 
         $this->sendOrderEmail(['order' => $order , 'visitor' => $visitor]);
@@ -180,6 +186,50 @@ class OrdersController extends BaseUser
         $this->redirect();
 
         $a = 1;
+
+    }
+
+    protected function setOrdersGoods( array $order) : bool{
+
+        if(in_array('orders_goods' , $this->model->showTables())){
+
+            $ordersGoods = [];
+
+            foreach ($this->cart['goods'] as $key=>$item){
+
+                $ordersGoods[$key]['orders_id'] = $order['id'];
+
+                foreach ($item as $field => $value){
+
+                    if(!empty($this->model->showColumns('orders_goods')[$field])){
+
+                        if($this->model->showColumns('orders_goods')['id_row'] === $field){
+
+                            if($this->model->showColumns('orders_goods')['goods_id']){
+
+                                $ordersGoods[$key]['goods_id'] = $value;
+
+                            }
+
+                        }else{
+
+                            $ordersGoods[$key][$field] = $value;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            return $this->model->add('orders_goods' , [
+                'fields' => $ordersGoods
+            ]);
+
+        }
+
+        return false;
 
     }
 

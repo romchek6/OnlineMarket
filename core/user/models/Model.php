@@ -220,6 +220,12 @@ class Model extends BaseModel
 
     public function applyDiscount(&$data , $discount){
 
+        if(!empty($this->showColumns('goods')['discount'])){
+
+            $data['old_price'] = null;
+
+        }
+
         if($discount){
 
             $data['old_price'] = $data['price'];

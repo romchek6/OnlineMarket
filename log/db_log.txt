@@ -26,3 +26,11 @@ Fault: 13-02-2023 0:37:16 - ошибка в SQL запросе: SELECT order_sta
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 24-02-2023 0:42:44 - ошибка в SQL запросе: INSERT INTO orders_goods () VALUES (NULL),(NULL),(NULL) - 1136 Column count doesn't match value count at row 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 24-02-2023 0:43:36 - ошибка в SQL запросе: INSERT INTO orders_goods () VALUES (NULL),(NULL),(NULL) - 1136 Column count doesn't match value count at row 1
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
