@@ -34,3 +34,11 @@ Fault: 24-02-2023 0:43:36 - ошибка в SQL запросе: INSERT INTO orde
 fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
 In line40
 
+Fault: 28-02-2023 15:27:53 - ошибка в SQL запросе: INSERT INTO orders (payments_id,delivery_id,address,visitors_id,total_sum,total_old_sum,total_qty,orders_statuses_id) VALUES ('1','1','ewqi[e0wqe[qwceqwcec[qwcewqc',1,'100',NULL,'5','2') - 1452 Cannot add or update a child row: a foreign key constraint fails (`onlinestore`.`orders`, CONSTRAINT `orders_visitors_null_fk` FOREIGN KEY (`visitors_id`) REFERENCES `visitors` (`id`) ON DELETE SET NULL ON UPDATE SET NULL)
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+
+Fault: 28-02-2023 15:37:58 - ошибка в SQL запросе: INSERT INTO orders (payments_id,delivery_id,address,visitors_id,total_sum,total_old_sum,total_qty,orders_statuses_id) VALUES ('1','1','ewqi[e0wqe[qewqewqeqwceqwcec[qwcewqc',1,'3427.5','4890','4','2') - 1452 Cannot add or update a child row: a foreign key constraint fails (`onlinestore`.`orders`, CONSTRAINT `orders_visitors_null_fk` FOREIGN KEY (`visitors_id`) REFERENCES `visitors` (`id`) ON DELETE SET NULL ON UPDATE SET NULL)
+fileE:\OSPanel\domains\OnlineStore\core\base\models\BaseModel.php
+In line40
+

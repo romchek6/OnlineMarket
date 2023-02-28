@@ -142,6 +142,8 @@ abstract class BaseController
 
         }
 
+        $this->userData = $this->userId;
+
         if(property_exists($this , 'userModel')) $this->userModel = UserModel::instance();
 
     }

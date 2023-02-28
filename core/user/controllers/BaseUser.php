@@ -30,6 +30,8 @@ abstract class BaseUser extends \core\base\controllers\BaseController
 
         $this->init();
 
+        $this->checkAuth();
+
         !$this->model && $this->model = Model::instance();
 
         $this->set = $this->model->get('settings' , [

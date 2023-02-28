@@ -12926,3 +12926,495 @@ Fault: 24-02-2023 1:00:24 - Не верное имя файла для подк�
 fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
 In line65
 
+Fault: 28-02-2023 15:17:20 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:17:23 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:17:23 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:17:24 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:17:24 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:17:31 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:17:31 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:06 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:06 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:09 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:09 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:12 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:12 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:58 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:18:59 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:23 - Не найдены поля в таблице - goods
+fileE:\OSPanel\domains\OnlineStore\core\admin\controllers\BaseAdmin.php
+In line115
+
+Fault: 28-02-2023 15:20:25 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:27 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:27 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:36 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:36 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:38 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:38 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:39 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:39 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:42 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:20:42 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:27:02 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:27:06 - Не верное имя файла для подключения - core/user/controllers/TemplatesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:27:25 - Не найдены записи в таблице catalog по ссылке autoprikol
+fileE:\OSPanel\domains\OnlineStore\core\user\controllers\CatalogController.php
+In line28
+
+Fault: 28-02-2023 15:27:26 - Не найдены записи в таблице catalog по ссылке autoprikol
+fileE:\OSPanel\domains\OnlineStore\core\user\controllers\CatalogController.php
+In line28
+
+Fault: 28-02-2023 15:27:28 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:27:32 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:27:32 - Не найдены записи в таблице catalog по ссылке assets
+fileE:\OSPanel\domains\OnlineStore\core\user\controllers\CatalogController.php
+In line28
+
+Fault: 28-02-2023 15:27:34 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:27:35 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:28:57 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 15:29:02 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:29:03 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:29:14 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:29:14 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:29:37 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:29:37 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:32:58 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:32:58 - Не верное имя файла для подключения - core/user/controllers/TemplatesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:33:01 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:33:01 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:33:04 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:33:04 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:33:14 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:33:14 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:36:30 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:36:30 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:36:32 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:36:33 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:07 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:07 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:11 - Не верное имя файла для подключения - core/user/controllers/TemplatesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:14 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:14 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:14 - Не верное имя файла для подключения - core/user/controllers/TemplatesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:17 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:17 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:20 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:37:20 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:38:59 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 15:39:03 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:39:03 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:39:10 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:39:10 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:39:36 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:39:36 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:39:38 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:39:38 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:19 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:19 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:29 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:30 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:32 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:32 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:37 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 15:41:37 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:04:21 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:04:21 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:04:26 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:04:26 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:04:27 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:04:28 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:21:31 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 16:24:10 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 16:25:00 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:25:02 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:25:02 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:25:07 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:25:07 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:26:28 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 16:26:57 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 16:27:08 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 16:27:24 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 16:28:41 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:28:44 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:28:44 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:28:48 - Отсутствует товар по ссылке assets
+fileE:\OSPanel\domains\OnlineStore\core\user\controllers\ProductController.php
+In line26
+
+Fault: 28-02-2023 16:28:48 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:28:49 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:28:49 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:29:52 - Отсутствует шаблон - templates/default/orders
+fileE:\OSPanel\domains\OnlineStore\core\base\controllers\BaseController.php
+In line96
+
+Fault: 28-02-2023 16:29:56 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:29:57 - Не верное имя файла для подключения - core/user/controllers/InformationController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:29:58 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:29:59 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:00 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:04 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:04 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:10 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:10 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:20 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:20 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:22 - Не верное имя файла для подключения - core/user/controllers/UserfilesController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:22 - Отсутствует товар по ссылке assets
+fileE:\OSPanel\domains\OnlineStore\core\user\controllers\ProductController.php
+In line26
+
+Fault: 28-02-2023 16:30:22 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:24 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
+Fault: 28-02-2023 16:30:24 - Не верное имя файла для подключения - core/user/controllers/AssetsController
+fileE:\OSPanel\domains\OnlineStore\core\base\settings\internal_settings.php
+In line65
+
